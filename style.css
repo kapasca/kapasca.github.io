@@ -57,8 +57,7 @@ img {
 }
 
 .hidden {
-  display: none;
-  transition: opacity 1s ease, transform 1s ease;
+  opacity: 0;
 }
 
 .visibility-hidden {

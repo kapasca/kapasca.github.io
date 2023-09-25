@@ -4,7 +4,7 @@ const profilePhoto = document.querySelector(".profile-photo");
 const links = document.querySelector(".links");
 const link = document.querySelectorAll(".link");
 
-let delay = 3000;
+let delay = 2000;
 
 letters.forEach((letter) => {
   setTimeout(() => {
