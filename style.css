@@ -1,0 +1,111 @@
+html {
+  background-color: #333333;
+  color: #ccc;
+  font-family: "Lexend", sans-serif;
+}
+
+a {
+  color: #ccc;
+}
+
+.container {
+  display: flex;
+  height: 90vh;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.alias {
+  font-family: "Rubik Moonrocks", cursive;
+  font-size: 7rem;
+  text-shadow: 7px 7px 5px rgba(0, 0, 0, 0.5);
+  padding: 0;
+  margin: 0;
+  margin-left: 40px;
+  margin-top: -40px;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.alias:hover,
+.alias:active,
+.alias:focus {
+  color: #caca44;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-photo {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid white;
+  box-shadow: 7px 7px 10px rgba(0, 0, 0, 0.5);
+  animation: appear 1.5s ease-in-out;
+}
+
+.hidden {
+  display: none;
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.visibility-hidden {
+  opacity: 0;
+}
+
+.visibility-true {
+  opacity: 1;
+}
+
+@keyframes appear {
+  0% {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.links {
+  display: flex;
+  margin-left: 250px;
+  transition: opacity 2s ease-in-out;
+  margin-top: -80px;
+}
+
+.link {
+  padding: 7px 20px;
+  border: 2px solid #555;
+  border-radius: 10px;
+  background-color: #272727;
+  margin: 0 25px;
+  text-align: center;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.link:hover,
+.link:active,
+.link:focus {
+  background-color: #caca44;
+  color: #000;
+}
+
+.link-ready {
+  margin: 0 7px;
+}
