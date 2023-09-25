@@ -91,7 +91,7 @@ img {
   border: 2px solid #555;
   border-radius: 10px;
   background-color: #272727;
-  margin: 0 25px;
+  margin: 0 0;
   text-align: center;
   font-size: 1.2rem;
   cursor: pointer;
@@ -106,5 +106,5 @@ img {
 }
 
 .link-ready {
-  margin: 0 7px;
+  margin: 0 10px;
 }
