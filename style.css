@@ -38,12 +38,17 @@ a {
   margin-top: -40px;
   cursor: pointer;
   transition: all 0.5s;
+  display: flex;
 }
 
 .alias:hover,
 .alias:active,
 .alias:focus {
   color: #caca44;
+}
+
+span._alias {
+  margin: 0 6px;
 }
 
 img {
@@ -65,7 +70,9 @@ img {
   cursor: pointer;
 }
 
-.profile-photo:hover, .profile-photo:active, .profile-photo:focus {
+.profile-photo:hover,
+.profile-photo:active,
+.profile-photo:focus {
   opacity: 0.7;
 }
 
@@ -141,4 +148,55 @@ img {
 ._highlight {
   font-size: 1rem;
   line-height: 40px;
+}
+
+@media screen and (max-width: 830px) {
+  .container {
+    margin-left: 25px;
+  }
+
+  .row {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .alias {
+    margin-top: 10px;
+  }
+
+  .links {
+    margin: 5px 0 0 40px;
+  }
+
+  .content {
+    margin: 30px 0 0 40px;
+    text-align: center;
+  }
+
+  .profile-photo {
+    margin-left: 35px;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .alias {
+    margin-top: 20px;
+    font-size: 50px;
+  }
+
+  .links {
+    margin-top: 10px;
+  }
+
+  .link-ready {
+    margin: 0 3px;
+  }
+
+  .link {
+    font-size: 20px;
+  }
+
+  .content {
+    font-size: 10px;
+  }
 }
