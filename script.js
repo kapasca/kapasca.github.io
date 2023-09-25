@@ -3,6 +3,7 @@ const letters = nameText.querySelectorAll("span");
 const profilePhoto = document.querySelector(".profile-photo");
 const links = document.querySelector(".links");
 const link = document.querySelectorAll(".link");
+const content = document.querySelector(".content");
 
 let delay = 2000;
 
@@ -26,3 +27,10 @@ link.forEach((single_link) => {
   }, delay);
   delay += 100;
 });
+
+delay += 300;
+
+setTimeout(() => {
+  content.classList.remove("visibility-hidden");
+  content.classList.add("visibility-true");
+}, delay);

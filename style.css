@@ -4,16 +4,21 @@ html {
   font-family: "Lexend", sans-serif;
 }
 
+body {
+  padding: 60px;
+}
+
 a {
   color: #ccc;
 }
 
 .container {
   display: flex;
-  height: 90vh;
+  height: 70vh;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  padding-right: 70px;
 }
 
 .row {
@@ -57,6 +62,7 @@ img {
   animation: appear 1.5s ease-in-out;
   opacity: 1;
   transition: opacity 0.5s;
+  cursor: pointer;
 }
 
 .profile-photo:hover, .profile-photo:active, .profile-photo:focus {
@@ -114,4 +120,25 @@ img {
 
 .link-ready {
   margin: 0 10px;
+}
+
+.content {
+  margin: 5px 0 0 200px;
+  font-size: 0.7rem;
+  font-weight: 300;
+  width: 450px;
+  color: #bbb;
+  text-shadow: 2px 1px 2px #151515;
+  line-height: 18px;
+  transition: all 1.5s;
+}
+
+.highlight {
+  color: #eee;
+  font-weight: 400;
+}
+
+._highlight {
+  font-size: 1rem;
+  line-height: 40px;
 }
