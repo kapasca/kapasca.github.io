@@ -20,11 +20,12 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 0 50px;
 }
 
 .alias {
   font-family: "Rubik Moonrocks", cursive;
-  font-size: 7rem;
+  font-size: 5rem;
   text-shadow: 7px 7px 5px rgba(0, 0, 0, 0.5);
   padding: 0;
   margin: 0;
@@ -47,13 +48,19 @@ img {
 }
 
 .profile-photo {
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
   overflow: hidden;
   border: 3px solid white;
   box-shadow: 7px 7px 10px rgba(0, 0, 0, 0.5);
   animation: appear 1.5s ease-in-out;
+  opacity: 0.75;
+  transition: opacity 0.5s;
+}
+
+.profile-photo:hover, .profile-photo:active, .profile-photo:focus {
+  opacity: 1;
 }
 
 .hidden {
@@ -81,19 +88,19 @@ img {
 
 .links {
   display: flex;
-  margin-left: 250px;
+  margin-left: 200px;
   transition: opacity 2s ease-in-out;
-  margin-top: -80px;
+  margin-top: -70px;
 }
 
 .link {
-  padding: 7px 20px;
-  border: 2px solid #555;
+  padding: 5px 10px;
+  border: 1px solid #555;
   border-radius: 10px;
   background-color: #272727;
   margin: 0 0;
   text-align: center;
-  font-size: 1.2rem;
+  font-size: 1rem;
   cursor: pointer;
   transition: all 0.5s;
 }
