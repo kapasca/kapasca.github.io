@@ -139,7 +139,7 @@ img {
   width: 450px;
   color: #bbb;
   text-shadow: 2px 1px 2px #151515;
-  line-height: 18px;
+  line-height: 15px;
   transition: all 1.5s;
 }
 
@@ -152,8 +152,9 @@ img {
   font-family: 'Great Vibes', cursive;
   font-size: 2rem;
   line-height: 20px;
-  margin-top: 20px;
-  margin-bottom: 10px;
+  margin-top: 25px;
+  margin-bottom: 15px;
+  margin-left: -10px;
 }
 
 .line-open {
