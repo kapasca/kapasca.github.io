@@ -47,6 +47,10 @@ a {
   color: #caca44;
 }
 
+.alias-container {
+  
+}
+
 span._alias {
   margin: 0 6px;
 }
@@ -148,8 +152,11 @@ img {
 }
 
 ._highlight {
-  font-size: 1rem;
-  line-height: 40px;
+  font-family: 'Great Vibes', cursive;
+  font-size: 2rem;
+  line-height: 20px;
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
 
 .line-open {
@@ -245,8 +252,7 @@ img {
 
   .alias {
     margin: 30px 0 20px 0;
-    padding: 0 20px;
-    font-size: 45px;
+    font-size: 14vw;
   }
 
   .links {
@@ -260,7 +266,7 @@ img {
   }
 
   ._highlight {
-    margin-top: 5px;
-    font-size: 18px;
+    margin-top: 20px;
+    font-size: 30px;
   }
 }
