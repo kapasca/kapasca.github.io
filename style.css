@@ -199,7 +199,7 @@ img {
   }
 
   .link {
-    font-size: 20px;
+    font-size: 17px;
   }
 
   .content {
@@ -219,7 +219,7 @@ img {
   .content {
     width: auto;
     margin: 30px 10px;
-    font-size: 14px;
+    font-size: 11px;
   }
 
   body {
@@ -241,12 +241,12 @@ img {
   .alias {
     margin: 30px 0 20px 0;
     padding: 0 20px;
-    font-size: 30px;
+    font-size: 45px;
   }
 
   .links {
     display: block;
-    margin: 0;
+    margin: 15px 0 0 0;
     padding: 0 30px;
   }
 
@@ -255,7 +255,7 @@ img {
   }
 
   ._highlight {
-    margin-top: 10px;
-    font-size: 22px;
+    margin-top: 5px;
+    font-size: 18px;
   }
 }
