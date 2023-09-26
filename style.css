@@ -233,6 +233,10 @@ img {
   font-size: 1.2rem;
   cursor: pointer;
   transition: all 0.5s;
+  display: inline-block;
+  width: 20px;
+  height: 22px;
+  text-decoration: none;
 }
 
 .link:hover,
@@ -243,7 +247,7 @@ img {
 }
 
 .link-ready {
-  margin: 0 10px;
+  margin: 0 9px 0 8px;
 }
 
 .content {
@@ -281,7 +285,7 @@ img {
   }
 
   .container {
-    margin-left: 35px;
+    margin-left: 70px;
     height: auto;
   }
 
@@ -338,6 +342,7 @@ img {
 
   .line-open {
     display: block;
+    height: 7px;
   }
 
   .content {
@@ -353,8 +358,8 @@ img {
   .container {
     padding: 0;
     width: 100%;
-    margin-left: 0;
-    margin-top: 30px;
+    margin-left: 10px;
+    margin-top: 40px;
     height: auto;
   }
 
@@ -374,7 +379,8 @@ img {
   .links {
     display: block;
     margin: 15px 0 0 0;
-    padding: 0 30px;
+    /* flex-direction: row; */
+    /* flex-wrap: nowrap; */
   }
 
   .row {
