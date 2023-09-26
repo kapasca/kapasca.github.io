@@ -219,8 +219,6 @@ img {
   margin-left: 200px;
   transition: opacity 2s ease-in-out;
   margin-top: -70px;
-  /* flex-wrap: wrap; */
-  /* justify-content: center; */
 }
 
 .link {
@@ -347,7 +345,7 @@ img {
 
   .content {
     width: auto;
-    margin: 40px 10px 10px 10px;
+    margin: 30px 10px 10px 10px;
     font-size: 11px;
   }
 
@@ -378,9 +376,7 @@ img {
 
   .links {
     display: block;
-    margin: 15px 0 0 0;
-    /* flex-direction: row; */
-    /* flex-wrap: nowrap; */
+    margin: 5px 0 0 0;
   }
 
   .row {
