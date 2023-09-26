@@ -282,7 +282,7 @@ img {
   display: none;
 }
 
-@media screen and (max-width: 830px) {
+@media screen and (max-width: 800px) {
   body {
     padding: 30px;
   }
@@ -306,13 +306,14 @@ img {
   }
 
   .content {
-    margin: 30px 0 0 40px;
+    margin: 30px 40px 0 60px;
     text-align: center;
   }
-
+  
   .profile-photo {
     margin-left: 35px;
   }
+  
 }
 
 @media screen and (max-width: 520px) {
@@ -333,16 +334,17 @@ img {
     font-size: 17px;
   }
 
-  .content {
-    font-size: 10px;
-  }
-}
-
-@media screen and (max-width: 450px) {
   .line-close {
     display: none;
   }
 
+  .content {
+    font-size: 10px;
+    width: 350px;
+  }
+}
+
+@media screen and (max-width: 450px) {
   .line-open {
     display: block;
     height: 7px;
@@ -350,7 +352,7 @@ img {
 
   .content {
     width: auto;
-    margin: 20px 10px 10px 10px;
+    margin: 20px 25px 10px 15px;
     font-size: 11px;
   }
 
