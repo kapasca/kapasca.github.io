@@ -5,7 +5,7 @@ const links = document.querySelector(".links");
 const link = document.querySelectorAll(".link");
 const content = document.querySelector(".content");
 
-let delay = 2000;
+let delay = 500;
 
 letters.forEach((letter) => {
   setTimeout(() => {
@@ -14,7 +14,7 @@ letters.forEach((letter) => {
   delay += 150;
 });
 
-delay += 500;
+delay += 150;
 
 setTimeout(() => {
   links.classList.remove("visibility-hidden");
@@ -28,7 +28,7 @@ link.forEach((single_link) => {
   delay += 100;
 });
 
-delay += 300;
+delay += 200;
 
 setTimeout(() => {
   content.classList.remove("visibility-hidden");
