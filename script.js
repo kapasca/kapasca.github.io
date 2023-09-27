@@ -14,7 +14,7 @@ letters.forEach((letter) => {
   delay += 100;
 });
 
-delay += 150;
+delay += 100;
 
 setTimeout(() => {
   links.classList.remove("visibility-hidden");

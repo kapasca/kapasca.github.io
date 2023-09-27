@@ -222,7 +222,7 @@ img {
 .links {
   display: flex;
   margin-left: 200px;
-  transition: opacity 2s ease-in-out;
+  transition: opacity 1s ease-in-out;
   margin-top: -70px;
 }
 
@@ -261,7 +261,7 @@ img {
   color: #bbb;
   text-shadow: 2px 1px 2px #151515;
   line-height: 15px;
-  transition: all 1.5s;
+  transition: all 1s;
 }
 
 .highlight {
