@@ -246,7 +246,7 @@ img {
 .link:active,
 .link:focus {
   background-color: #21c6f6;
-  color: #000;
+  color: #fff;
 }
 
 .link-ready {
