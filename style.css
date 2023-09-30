@@ -163,12 +163,12 @@ a {
 .alias:hover,
 .alias:active,
 .alias:focus {
-  color: #caca44;
+  color: #21c6f6;
 }
 
 span._alias {
   margin: 0 6px;
-  transition: all 0.5s;
+  /* transition: all 0.5s; */
 }
 
 img {
@@ -182,7 +182,7 @@ img {
   height: 150px;
   border-radius: 50%;
   overflow: hidden;
-  border: 3px solid white;
+  /* border: 3px solid #333; */
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
   animation: appear 1.5s ease-in-out;
   opacity: 1;
@@ -245,7 +245,7 @@ img {
 .link:hover,
 .link:active,
 .link:focus {
-  background-color: #caca44;
+  background-color: #21c6f6;
   color: #000;
 }
 
