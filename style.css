@@ -163,7 +163,7 @@ a {
 .alias:hover,
 .alias:active,
 .alias:focus {
-  color: #21c6f6;
+  color: #888;
 }
 
 span._alias {
@@ -186,14 +186,16 @@ img {
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
   animation: appear 1.5s ease-in-out;
   opacity: 1;
-  transition: opacity 0.5s;
+  transition: all 0.3s;
   cursor: pointer;
 }
 
 .profile-photo:hover,
 .profile-photo:active,
 .profile-photo:focus {
-  opacity: 0.7;
+  width: 130px;
+  height: 130px;
+  margin: 10px;
 }
 
 .hidden {
@@ -245,8 +247,8 @@ img {
 .link:hover,
 .link:active,
 .link:focus {
-  background-color: #21c6f6;
-  color: #fff;
+  background-color: #ccc;
+  color: #333;
 }
 
 .link-ready {
