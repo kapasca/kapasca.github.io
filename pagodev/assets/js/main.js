@@ -429,6 +429,7 @@
       mobileNav.addEventListener("click", function (e) {
         var link = e.target.closest("[data-mobile-nav-link]");
         if (!link) return;
+        e.preventDefault();
         closeMobileMenu();
         goTo(link.getAttribute("data-mobile-nav-link"));
       });
@@ -537,14 +538,38 @@
     return d.innerHTML;
   }
 
+  function getSectionScrollOffset() {
+    var headerHeight = header ? header.offsetHeight : 0;
+    return headerHeight;
+  }
+
   function goTo(href) {
     closeCmdk();
+    closeMobileMenu();
     if (href === "#top") {
       window.scrollTo({ top: 0, behavior: "smooth" });
       return;
     }
     var target = document.querySelector(href);
-    if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+    if (!target) return;
+
+    var targetSection = target.closest("section[id]") || target;
+    var top = targetSection.getBoundingClientRect().top + window.pageYOffset - getSectionScrollOffset();
+    window.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
+  }
+
+  function initAnchorNavigation() {
+    document.addEventListener("click", function (e) {
+      var link = e.target.closest('a[href^="#"]');
+      if (!link) return;
+
+      var href = link.getAttribute("href");
+      if (!href || href === "#") return;
+      if (!document.querySelector(href)) return;
+
+      e.preventDefault();
+      goTo(href);
+    });
   }
 
   function openCmdk() {
@@ -716,6 +741,7 @@
 
     initReveal();
     initCmdk();
+    initAnchorNavigation();
     initMobileMenu();
     initKeyboardShortcuts();
     initEasterEgg();
