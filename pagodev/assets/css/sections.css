@@ -99,7 +99,7 @@
   place-items: center;
   color: var(--c-blue);
   transform: translate(-50%, -50%);
-  animation: rail-node-run-x 4s linear infinite, rail-node-color 4s linear infinite;
+  animation: rail-node-run-x 10s linear infinite, rail-node-color 10s linear infinite;
 }
 
 .process-rail .rail-node::before {
@@ -129,22 +129,29 @@
 }
 
 @keyframes rail-node-run-x {
-  0% { left: 2%; opacity: 0.85; }
-  50% { opacity: 1; }
-  100% { left: 98%; opacity: 0.85; }
+  2%, 10% { left: 2%; opacity: 1; }
+  22%, 30% { left: 22%; opacity: 1; }
+  42%, 50% { left: 42%; opacity: 1; }
+  63%, 71% { left: 63%; opacity: 1; }
+  83%, 91% { left: 83%; opacity: 1; }
+  100% { left: 100%; opacity: 0.85; }
 }
 
 @keyframes rail-node-run-y {
-  0% { top: 24px; opacity: 0.85; }
-  50% { opacity: 1; }
+  2%, 10% { top: 2%; opacity: 1; }
+  22%, 30% { top: 22%; opacity: 1; }
+  42%, 50% { top: 42%; opacity: 1; }
+  63%, 71% { top: 63%; opacity: 1; }
+  83%, 91% { top: 83%; opacity: 1; }
   100% { top: calc(100% - 8px); opacity: 0.85; }
 }
 
 @keyframes rail-node-color {
-  0%, 100% { color: var(--c-blue); }
-  25% { color: var(--c-green); }
-  50% { color: var(--c-red); }
-  75% { color: var(--c-yellow); }
+  0%, 21.99% { color: var(--c-blue); }
+  22%, 41.99% { color: var(--c-green); }
+  42%, 62.99% { color: var(--c-red); }
+  63%, 82.99% { color: var(--c-yellow); }
+  83%, 100% { color: var(--c-blue); }
 }
 
 @media (max-width: 768px) {
