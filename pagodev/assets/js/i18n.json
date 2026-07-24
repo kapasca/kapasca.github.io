@@ -4,6 +4,7 @@
     "header": {
       "quickAccess": "Quick Access",
       "quickAccessAria": "Open quick search",
+      "mobileMenuTitle": "Menu",
       "themeToLight": "Enable light mode",
       "themeToDark": "Enable dark mode",
       "startProject": "Start Project",
@@ -135,11 +136,17 @@
       "navTitle": "Navigation",
       "navItems": ["About Us", "Services", "Workflow", "FAQ"],
       "contactTitle": "Contact",
+      "contactEmail": "hello@pagodev.id",
+      "contactPhone": "+62 822 4342 9301",
+      "contactLocation": "Yogyakarta, Indonesia",
+      "insideButton": "inside:pagodev",
       "copyright": "All rights reserved."
     },
     "egg": {
       "aria": "Easter egg PAGODEV",
+      "title": "<inside:pagodev>",
       "body": "<br />You found one of the hidden corners of our website.<br /><br />We appreciate people who explore beyond the obvious.<br />If you believe great software starts with curiosity, attention to detail, and thoughtful engineering, we'd love to build with you.<br /><br />Let's create something remarkable together.",
+      "ctaWhatsapp": "Direct Whatsapp",
       "close": "Close [esc]"
     }
   },
@@ -148,6 +155,7 @@
     "header": {
       "quickAccess": "Akses Cepat",
       "quickAccessAria": "Buka pencarian cepat",
+      "mobileMenuTitle": "Menu",
       "themeToLight": "Aktifkan mode terang",
       "themeToDark": "Aktifkan mode gelap",
       "startProject": "Mulai Proyek",
@@ -279,11 +287,17 @@
       "navTitle": "Menu Utama",
       "navItems": ["Tentang Kami", "Layanan", "Alur Kerja", "FAQ"],
       "contactTitle": "Hubungi Kami",
+      "contactEmail": "hello@pagodev.id",
+      "contactPhone": "+62 822 4342 9301",
+      "contactLocation": "Yogyakarta, Indonesia",
+      "insideButton": "inside:pagodev",
       "copyright": "Hak cipta dilindungi."
     },
     "egg": {
       "aria": "Easter egg PAGODEV",
+      "title": "<inside:pagodev>",
       "body": "<br />Anda menemukan salah satu sudut tersembunyi di website kami.<br /><br />Kami menghargai orang yang mengeksplorasi lebih dari yang terlihat.<br />Jika Anda percaya software hebat dimulai dari rasa ingin tahu, perhatian pada detail, dan rekayasa yang matang, kami ingin membangunnya bersama Anda.<br /><br />Mari ciptakan sesuatu yang luar biasa bersama.",
+      "ctaWhatsapp": "WhatsApp Langsung",
       "close": "Tutup [esc]"
     }
   }

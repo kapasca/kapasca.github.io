@@ -256,6 +256,8 @@
       langBtn.setAttribute("aria-label", t.header.langToggleAria);
     }
 
+    setText(".mobile-menu-title", t.header.mobileMenuTitle);
+
     setEyebrowText(".hero-copy .eyebrow", t.hero.eyebrow);
     setText(".hero-copy h1", t.hero.title);
     setHtml(".hero-copy .lead", t.hero.lead);
@@ -304,6 +306,10 @@
     setTextAt("nav.footer-col ul li a", 2, t.footer.navItems[2]);
     setTextAt("nav.footer-col ul li a", 3, t.footer.navItems[3]);
     setTextAt(".footer-col h4", 1, t.footer.contactTitle);
+    setText(".contact-list li:nth-child(1) .contact-item span", t.footer.contactEmail);
+    setText(".contact-list li:nth-child(2) .contact-item span", t.footer.contactPhone);
+    setText(".contact-list li:nth-child(3) .contact-item span", t.footer.contactLocation);
+    setText(".footer-egg", t.footer.insideButton);
 
     var yearNow = new Date().getFullYear();
     var footerCopy = document.querySelector("[data-footer-copy]");
@@ -313,7 +319,9 @@
 
     var eggOverlay = document.querySelector(".egg-overlay");
     if (eggOverlay) eggOverlay.setAttribute("aria-label", t.egg.aria);
+    setText(".egg-content h2", t.egg.title);
     setHtml(".egg-content p", t.egg.body);
+    setText(".egg-actions .btn-primary", t.egg.ctaWhatsapp);
     setText(".egg-close", t.egg.close);
 
     cmdkItemsData = buildCmdkItems(next);

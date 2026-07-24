@@ -10,7 +10,7 @@
 .hero-grid {
   display: grid;
   grid-template-columns: 60fr 40fr;
-  gap: var(--sp-5);
+  gap: var(--sp-4);
   align-items: center;
 }
 @media (max-width: 980px) {
@@ -108,6 +108,8 @@
 .hero-visual::after { right: 3%; bottom: 7%; border-radius: 0 20px 20px 20px; }
 
 .hero-logo-visual {
+  position: relative;
+  isolation: isolate;
   overflow: hidden;
   background-image:
     linear-gradient(color-mix(in srgb, var(--text-primary) 2.5%, transparent) 1px, transparent 1px),
@@ -126,7 +128,7 @@
   filter:
     drop-shadow(0 10px 28px color-mix(in srgb, var(--c-blue) 15%, transparent))
     drop-shadow(0 0 26px color-mix(in srgb, var(--c-green) 14%, transparent));
-  animation: logo-float 8s var(--ease) infinite;
+  animation: logo-float 6s var(--ease) infinite, logo-mark-energy 4s ease-in-out infinite;
   transition: transform var(--dur-2) var(--ease), filter var(--dur-2) var(--ease);
 }
 
@@ -135,46 +137,50 @@
 .logo-node {
   position: absolute;
   pointer-events: none;
+  z-index: 2;
 }
 
 .logo-orbit {
+  left: 50%;
+  top: 50%;
   border: 1px solid var(--border);
   border-radius: 999px;
   transform-origin: center;
 }
 .orbit-one {
-  width: 80%;
-  height: 60%;
+  width: 70%;
+  height: 70%;
   opacity: 1;
-  animation: logo-orbit-cw 10s linear infinite;
+  border-color: rgba(74, 149, 207, 0.28);
+  animation: logo-orbit-cw 10s linear infinite, logo-orbit-fade 4.4s ease-in-out infinite;
 }
 .orbit-two {
-  width: 60%;
-  height: 80%;
-  opacity: 1;
-  border-style: dashed;
-  border-color: var(--border-strong);
-  animation: logo-orbit-ccw 15s linear infinite;
+  width: 70%;
+  height: 70%;
+  opacity: 0.9;
+  border-color: rgba(214, 186, 57, 0.34);
+  animation: logo-orbit-ccw 13.8s linear infinite, logo-orbit-fade 5.2s ease-in-out infinite reverse;
 }
 
 .logo-signal {
   left: 50%;
   top: 50%;
   border-radius: 999px;
-  border: 1px solid rgba(74, 149, 207, 0.42);
+  border: 1.5px solid rgba(255, 255, 255, 0.72);
   transform: translate(-50%, -50%) scale(0.78);
   opacity: 0;
 }
 .signal-one {
-  width: 38%;
-  height: 38%;
-  animation: logo-signal-wave 4.8s ease-out infinite;
+  width: 30%;
+  height: 30%;
+  border-color: rgba(221, 62, 62, 0.96);
+  animation: logo-signal-wave-a 4.6s ease-out infinite;
 }
 .signal-two {
-  width: 56%;
-  height: 56%;
-  border-color: rgba(214, 186, 57, 0.44);
-  animation: logo-signal-wave 4.8s ease-out infinite 1.6s;
+  width: 45%;
+  height: 45%;
+  border-color: rgba(64, 196, 112, 0.98);
+  animation: logo-signal-wave-b 5.8s ease-out infinite 0.5s;
 }
 
 .logo-node {
@@ -242,19 +248,55 @@
   50% { transform: translateY(-6px) scale(1.01); }
 }
 
-@keyframes logo-orbit-cw {
+@keyframes logo-mark-energy {
+  0%, 100% {
+    filter:
+      drop-shadow(0 10px 28px color-mix(in srgb, var(--c-blue) 15%, transparent))
+      drop-shadow(0 0 26px color-mix(in srgb, var(--c-green) 14%, transparent));
+  }
+  50% {
+    filter:
+      drop-shadow(0 16px 34px color-mix(in srgb, var(--c-blue) 24%, transparent))
+      drop-shadow(0 0 34px color-mix(in srgb, var(--c-yellow) 18%, transparent));
+  }
+}
+
+@keyframes logo-energy-spin {
   to { transform: rotate(360deg); }
 }
 
-@keyframes logo-orbit-ccw {
-  to { transform: rotate(-360deg); }
+@keyframes logo-energy-breathe {
+  0%, 100% { opacity: 0.36; transform: scale(0.98); }
+  50% { opacity: 0.7; transform: scale(1.03); }
 }
 
-@keyframes logo-signal-wave {
+@keyframes logo-orbit-cw {
+  from { transform: translate(-50%, -50%) rotate(0deg) scaleX(1.18) scaleY(0.76); }
+  to { transform: translate(-50%, -50%) rotate(360deg) scaleX(1.18) scaleY(0.76); }
+}
+
+@keyframes logo-orbit-ccw {
+  from { transform: translate(-50%, -50%) rotate(0deg) scaleX(1.18) scaleY(0.76); }
+  to { transform: translate(-50%, -50%) rotate(-360deg) scaleX(1.18) scaleY(0.76); }
+}
+
+@keyframes logo-orbit-fade {
+  0%, 100% { opacity: 0.62; }
+  50% { opacity: 1; }
+}
+
+@keyframes logo-signal-wave-a {
   0% { transform: translate(-50%, -50%) scale(0.78); opacity: 0; }
-  22% { opacity: 0.45; }
-  75% { opacity: 0.18; }
-  100% { transform: translate(-50%, -50%) scale(1.16); opacity: 0; }
+  18% { opacity: 1; }
+  60% { opacity: 0.7; }
+  100% { transform: translate(-50%, -50%) scale(1.14); opacity: 0; }
+}
+
+@keyframes logo-signal-wave-b {
+  0% { transform: translate(-50%, -50%) scale(0.78); opacity: 0; }
+  18% { opacity: 1; }
+  62% { opacity: 0.65; }
+  100% { transform: translate(-50%, -50%) scale(1.2); opacity: 0; }
 }
 
 @keyframes logo-node-pulse {
@@ -301,6 +343,8 @@
 
 @media (prefers-reduced-motion: reduce) {
   .hero-logo-mark,
+  .hero-logo-visual::before,
+  .hero-logo-visual::after,
   .logo-orbit,
   .logo-signal,
   .logo-node {
