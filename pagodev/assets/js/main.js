@@ -21,6 +21,7 @@
   var currentLanguage = "en";
   var cmdkItemsData = [];
   var I18N = {};
+  var LANG_KEYS = { en: true, id: true };
 
   var FALLBACK_TEXT = {
     en: {
@@ -69,7 +70,51 @@
   };
 
   function hasTranslations() {
-    return !!(I18N && I18N.en && I18N.id);
+    return !!(I18N && typeof I18N === "object" && Object.keys(I18N).length);
+  }
+
+  function isLangPairObject(node) {
+    if (!node || Array.isArray(node) || typeof node !== "object") return false;
+    var keys = Object.keys(node);
+    if (!keys.length) return false;
+    return keys.every(function (key) {
+      return !!LANG_KEYS[key];
+    });
+  }
+
+  function extractLanguageTree(node, lang, fallbackLang) {
+    if (Array.isArray(node)) {
+      return node.map(function (item) {
+        return extractLanguageTree(item, lang, fallbackLang);
+      });
+    }
+
+    if (node && typeof node === "object") {
+      if (isLangPairObject(node)) {
+        if (node[lang] !== undefined && node[lang] !== null) return node[lang];
+        if (node[fallbackLang] !== undefined && node[fallbackLang] !== null) return node[fallbackLang];
+        return "";
+      }
+
+      var out = {};
+      Object.keys(node).forEach(function (key) {
+        out[key] = extractLanguageTree(node[key], lang, fallbackLang);
+      });
+      return out;
+    }
+
+    return node;
+  }
+
+  function getTranslation(lang) {
+    var next = lang === "id" ? "id" : "en";
+    if (!hasTranslations()) return null;
+
+    if (I18N.en && I18N.id) {
+      return I18N[next] || I18N.en;
+    }
+
+    return extractLanguageTree(I18N, next, "en");
   }
 
   function getI18nValue(source, path) {
@@ -157,7 +202,7 @@
       return (DEFAULT_CMDK_BY_LANG[lang] || DEFAULT_CMDK_BY_LANG.en).slice();
     }
 
-    var t = I18N[lang] || I18N.en;
+    var t = getTranslation(lang);
     return t.cmdk.items.map(function (item) {
       var isAction = item.href === "#contact";
       return {
@@ -177,7 +222,7 @@
   }
 
   function updateMobileMenuLabels() {
-    var source = hasTranslations() ? I18N[currentLanguage] || I18N.en : FALLBACK_TEXT[currentLanguage] || FALLBACK_TEXT.en;
+    var source = hasTranslations() ? getTranslation(currentLanguage) : FALLBACK_TEXT[currentLanguage] || FALLBACK_TEXT.en;
     var theme = root.getAttribute("data-theme") === "light" ? "light" : "dark";
     var mobileThemeBtn = document.querySelector("[data-mobile-theme-toggle]");
     var mobileLangBtns = document.querySelectorAll("[data-mobile-lang-toggle]");
@@ -246,7 +291,7 @@
     }
 
     var next = lang === "id" ? "id" : "en";
-    var t = I18N[next] || I18N.en;
+    var t = getTranslation(next);
     currentLanguage = next;
 
     root.setAttribute("lang", next);
@@ -323,7 +368,7 @@
     var btn = document.querySelector("[data-theme-toggle]");
     if (!btn) return;
 
-    var t = hasTranslations() ? I18N[currentLanguage] || I18N.en : FALLBACK_TEXT[currentLanguage] || FALLBACK_TEXT.en;
+    var t = hasTranslations() ? getTranslation(currentLanguage) : FALLBACK_TEXT[currentLanguage] || FALLBACK_TEXT.en;
     btn.setAttribute("aria-pressed", theme === "light");
     btn.setAttribute("aria-label", theme === "light" ? t.header.themeToDark : t.header.themeToLight);
     updateMobileMenuLabels();
@@ -456,7 +501,7 @@
 
     cmdkList.innerHTML = "";
     if (!filtered.length) {
-      var noResultText = hasTranslations() ? (I18N[currentLanguage] || I18N.en).cmdk.noResults : (FALLBACK_TEXT[currentLanguage] || FALLBACK_TEXT.en).cmdk.noResults;
+      var noResultText = hasTranslations() ? getTranslation(currentLanguage).cmdk.noResults : (FALLBACK_TEXT[currentLanguage] || FALLBACK_TEXT.en).cmdk.noResults;
       cmdkList.innerHTML = '<div class="cmdk-empty">' + noResultText + ' "' + escapeHtml(filter) + '"</div>';
       return;
     }

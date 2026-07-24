@@ -1,304 +1,480 @@
 {
-  "en": {
-    "metaTitle": "PAGODEV - Software tailored to your needs",
-    "header": {
-      "quickAccess": "Quick Access",
-      "quickAccessAria": "Open quick search",
-      "mobileMenuTitle": "Menu",
-      "themeToLight": "Enable light mode",
-      "themeToDark": "Enable dark mode",
-      "startProject": "Start Project",
-      "langCode": "EN",
-      "langToggleAria": "Switch to Indonesian"
+  "metaTitle": {
+    "en": "PAGODEV - Software tailored to your needs",
+    "id": "PAGODEV - Solusi software sesuai kebutuhan Anda"
+  },
+  "header": {
+    "quickAccess": {
+      "en": "Quick Access",
+      "id": "Akses Cepat"
     },
-    "cmdk": {
-      "dialogAria": "Quick search",
-      "searchPlaceholder": "Search page sections...",
-      "searchAria": "Search",
-      "navTag": "Nav",
-      "actionTag": "Action",
-      "noResults": "No results for",
-      "items": [
-        { "label": "Home", "href": "#top" },
-        { "label": "About Us", "href": "#about" },
-        { "label": "Services", "href": "#services" },
-        { "label": "Workflow", "href": "#process" },
-        { "label": "FAQ", "href": "#faq" },
-        { "label": "Start New Project", "href": "#contact" }
-      ]
+    "quickAccessAria": {
+      "en": "Open quick search",
+      "id": "Buka pencarian cepat"
     },
-    "hero": {
-      "eyebrow": "Software for real needs",
-      "title": "Custom software built around your business",
-      "lead": "PAGODEV builds custom websites, applications, <br />and business systems designed around the way you work. Every solution is tailored, scalable, and built to solve real operational challenges.",
-      "ctaPrimary": "Discuss Your Project",
-      "ctaSecondary": "View Services"
+    "mobileMenuTitle": {
+      "en": "Menu",
+      "id": "Menu"
     },
-    "about": {
-      "eyebrow": "About Us",
-      "title": "Start with needs, <br />not assumptions",
-      "lead": "We help translate your needs into digital products<br />that are easy to use and easy to develop.",
-      "principles": [
-        {
-          "title": "Clear",
-          "body": "Every project starts with clear communication,<br />defined scope, and transparent planning."
-        },
-        {
-          "title": "Functional",
-          "body": "We build software that solves real problems,<br />not unnecessary features."
-        },
-        {
-          "title": "Sustainable",
-          "body": "Maintainable architecture, scalable code,<br />and long-term support for future growth."
-        },
-        {
-          "title": "Affordable",
-          "body": "Cost-effective solutions without compromising quality,<br />we ensure value for your investment."
-        }
-      ]
+    "themeToLight": {
+      "en": "Enable light mode",
+      "id": "Aktifkan mode terang"
     },
-    "services": {
-      "eyebrow": "Services",
-      "title": "Our expertise",
-      "lead": "Every project is different.<br />These are the services we build most often.",
-      "items": [
-        {
-          "title": "Personal Website",
-          "body": "Personal profile, portfolio, or professional landing page."
-        },
-        {
-          "title": "Company Website",
-          "body": "Informative and trustworthy company website."
-        },
-        {
-          "title": "Information System",
-          "body": "Data and workflow management in one system."
-        },
-        {
-          "title": "Mobile App",
-          "body": "Practical apps for Android and iOS users."
-        },
-        {
-          "title": "Desktop App",
-          "body": "Operational applications that are comfortable to use on desktop."
-        },
-        {
-          "title": "Special Request",
-          "body": "Have unique requirements? Let's discuss the right solution."
-        }
-      ]
+    "themeToDark": {
+      "en": "Enable dark mode",
+      "id": "Aktifkan mode gelap"
     },
-    "process": {
-      "eyebrow": "Workflow",
-      "title": "Simple and focused",
-      "steps": [
-        { "title": "Discovery", "body": "Understanding your goals and needs." },
-        { "title": "Planning", "body": "Defining scope and solution design." },
-        { "title": "Development", "body": "Building the product with regular updates." },
-        { "title": "Testing", "body": "Ensuring features work properly." },
-        { "title": "Launch", "body": "Your product is ready to use and scale." }
-      ]
+    "startProject": {
+      "en": "Start Project",
+      "id": "Mulai Proyek"
     },
-    "faq": {
-      "eyebrow": "FAQ",
-      "title": "Frequently asked questions",
-      "items": [
-        {
-          "q": "Can you build custom features?",
-          "a": "Custom development is our specialty. We build software tailored to your workflows, with custom features, automation, and AI integration."
-        },
-        {
-          "q": "How much does a project cost?",
-          "a": "Every project is different. Our services start from IDR 2 million, depending on features, complexity, and development scope."
-        },
-        {
-          "q": "How long does development take?",
-          "a": "Small projects may take around one week, while larger systems can require several months depending on their complexity."
-        },
-        {
-          "q": "Do you provide warranty?",
-          "a": "Yes. We provide post-launch support, bug fixes, and feature warranty to ensure your application runs reliably."
-        },
-        {
-          "q": "Do you serve clients outside your city?",
-          "a": "Yes. We work remotely with clients across Indonesia and internationally. As long as communication runs smoothly, distance is never a limitation."
-        }
-      ]
+    "langCode": {
+      "en": "EN",
+      "id": "ID"
     },
-    "contact": {
-      "eyebrow": "Start Project",
-      "title": "Have an idea?",
-      "lead": "Every great product starts with a conversation.<br />Let's build yours together.",
-      "button": "Contact Us"
-    },
-    "footer": {
-      "brand": "PAGODEV creates websites and custom applications that are clear, functional, and ready to evolve with your needs.",
-      "navTitle": "Navigation",
-      "navItems": ["About Us", "Services", "Workflow", "FAQ"],
-      "contactTitle": "Contact",
-      "contactEmail": "hello@pagodev.id",
-      "contactPhone": "+62 822 4342 9301",
-      "contactLocation": "Yogyakarta, Indonesia",
-      "insideButton": "inside:pagodev",
-      "copyright": "All rights reserved."
-    },
-    "egg": {
-      "aria": "Easter egg PAGODEV",
-      "title": "<inside:pagodev>",
-      "body": "<br />You found one of the hidden corners of our website.<br /><br />We appreciate people who explore beyond the obvious.<br />If you believe great software starts with curiosity, attention to detail, and thoughtful engineering, we'd love to build with you.<br /><br />Let's create something remarkable together.",
-      "ctaWhatsapp": "Direct Whatsapp",
-      "close": "Close [esc]"
+    "langToggleAria": {
+      "en": "Switch to Indonesian",
+      "id": "Ganti ke Bahasa Inggris"
     }
   },
-  "id": {
-    "metaTitle": "PAGODEV - Solusi software sesuai kebutuhan Anda",
-    "header": {
-      "quickAccess": "Akses Cepat",
-      "quickAccessAria": "Buka pencarian cepat",
-      "mobileMenuTitle": "Menu",
-      "themeToLight": "Aktifkan mode terang",
-      "themeToDark": "Aktifkan mode gelap",
-      "startProject": "Mulai Proyek",
-      "langCode": "ID",
-      "langToggleAria": "Ganti ke Bahasa Inggris"
+  "cmdk": {
+    "dialogAria": {
+      "en": "Quick search",
+      "id": "Pencarian cepat"
     },
-    "cmdk": {
-      "dialogAria": "Pencarian cepat",
-      "searchPlaceholder": "Cari bagian halaman...",
-      "searchAria": "Cari",
-      "navTag": "Nav",
-      "actionTag": "Aksi",
-      "noResults": "Tidak ada hasil untuk",
-      "items": [
-        { "label": "Beranda", "href": "#top" },
-        { "label": "Tentang Kami", "href": "#about" },
-        { "label": "Layanan", "href": "#services" },
-        { "label": "Alur Kerja", "href": "#process" },
-        { "label": "FAQ", "href": "#faq" },
-        { "label": "Mulai Proyek Baru", "href": "#contact" }
-      ]
+    "searchPlaceholder": {
+      "en": "Search page sections...",
+      "id": "Cari bagian halaman..."
     },
-    "hero": {
-      "eyebrow": "Software untuk kebutuhan nyata",
-      "title": "Software spesial dibangun sesuai keperluan Anda",
-      "lead": "PAGODEV membangun website, aplikasi, <br />dan sistem informasi kustom sesuai kebutuhan Anda. Setiap solusi dirancang khusus, terukur, dan dibuat untuk menyelesaikan tantangan operasional.",
-      "ctaPrimary": "Diskusikan Proyek Anda",
-      "ctaSecondary": "Lihat Layanan"
+    "searchAria": {
+      "en": "Search",
+      "id": "Cari"
     },
-    "about": {
-      "eyebrow": "Tentang Kami",
-      "title": "Atas kebutuhan, <br />bukan asumsi",
-      "lead": "Kami menerjemahkan kebutuhan menjadi aplikasi yang mudah digunakan dan mudah dikembangkan.",
-      "principles": [
-        {
-          "title": "Jelas",
-          "body": "Setiap proyek dimulai dengan komunikasi yang jelas,<br />ruang lingkup terdefinisi, dan perencanaan transparan."
+    "navTag": {
+      "en": "Nav",
+      "id": "Nav"
+    },
+    "actionTag": {
+      "en": "Action",
+      "id": "Aksi"
+    },
+    "noResults": {
+      "en": "No results for",
+      "id": "Tidak ada hasil untuk"
+    },
+    "items": [
+      {
+        "label": {
+          "en": "Home",
+          "id": "Beranda"
         },
-        {
-          "title": "Fungsional",
-          "body": "Kami membangun software yang menyelesaikan masalah nyata,<br />bukan fitur yang tidak diperlukan."
+        "href": "#top"
+      },
+      {
+        "label": {
+          "en": "About Us",
+          "id": "Tentang Kami"
         },
-        {
-          "title": "Berkelanjutan",
-          "body": "Arsitektur yang mudah dirawat, kode yang skalabel,<br />dan dukungan jangka panjang untuk pertumbuhan ke depan."
+        "href": "#about"
+      },
+      {
+        "label": {
+          "en": "Services",
+          "id": "Layanan"
         },
-        {
-          "title": "Terjangkau",
-          "body": "Solusi hemat biaya tanpa mengorbankan kualitas,<br />kami memastikan nilai terbaik untuk investasi Anda."
+        "href": "#services"
+      },
+      {
+        "label": {
+          "en": "Workflow",
+          "id": "Alur Kerja"
+        },
+        "href": "#process"
+      },
+      {
+        "label": {
+          "en": "FAQ",
+          "id": "FAQ"
+        },
+        "href": "#faq"
+      },
+      {
+        "label": {
+          "en": "Start New Project",
+          "id": "Mulai Proyek Baru"
+        },
+        "href": "#contact"
+      }
+    ]
+  },
+  "hero": {
+    "eyebrow": {
+      "en": "Software for real needs",
+      "id": "Software untuk kebutuhan nyata"
+    },
+    "title": {
+      "en": "Custom software built around your business",
+      "id": "Software spesial dibangun sesuai keperluan Anda"
+    },
+    "lead": {
+      "en": "PAGODEV builds custom websites, applications, <br />and business systems designed around the way you work. Every solution is tailored, scalable, and built to solve real operational challenges.",
+      "id": "PAGODEV membangun website, aplikasi, <br />dan sistem informasi kustom sesuai kebutuhan Anda. Setiap solusi dirancang khusus, terukur, dan dibuat untuk menyelesaikan tantangan operasional."
+    },
+    "ctaPrimary": {
+      "en": "Discuss Your Project",
+      "id": "Diskusikan Proyek Anda"
+    },
+    "ctaSecondary": {
+      "en": "View Services",
+      "id": "Lihat Layanan"
+    }
+  },
+  "about": {
+    "eyebrow": {
+      "en": "About Us",
+      "id": "Tentang Kami"
+    },
+    "title": {
+      "en": "Start with needs, <br />not assumptions",
+      "id": "Atas kebutuhan, <br />bukan asumsi"
+    },
+    "lead": {
+      "en": "We help translate your needs into digital products<br />that are easy to use and easy to develop.",
+      "id": "Kami menerjemahkan kebutuhan menjadi aplikasi yang mudah digunakan dan mudah dikembangkan."
+    },
+    "principles": [
+      {
+        "title": {
+          "en": "Clear",
+          "id": "Jelas"
+        },
+        "body": {
+          "en": "Every project starts with clear communication,<br />defined scope, and transparent planning.",
+          "id": "Setiap proyek dimulai dengan komunikasi yang jelas,<br />ruang lingkup terdefinisi, dan perencanaan transparan."
         }
-      ]
-    },
-    "services": {
-      "eyebrow": "Layanan",
-      "title": "Keahlian kami",
-      "lead": "Setiap proyek itu berbeda.<br />Ini layanan yang paling sering kami bangun.",
-      "items": [
-        {
-          "title": "Website Personal",
-          "body": "Profil pribadi, portofolio, atau landing page profesional."
+      },
+      {
+        "title": {
+          "en": "Functional",
+          "id": "Fungsional"
         },
-        {
-          "title": "Website Perusahaan",
-          "body": "Website perusahaan yang informatif dan terpercaya."
-        },
-        {
-          "title": "Sistem Informasi",
-          "body": "Pengelolaan data dan alur kerja dalam satu sistem."
-        },
-        {
-          "title": "Aplikasi Mobile",
-          "body": "Aplikasi praktis untuk pengguna Android dan iOS."
-        },
-        {
-          "title": "Aplikasi Desktop",
-          "body": "Aplikasi operasional yang nyaman digunakan di desktop."
-        },
-        {
-          "title": "Permintaan Khusus",
-          "body": "Punya kebutuhan unik? Mari diskusikan solusi yang tepat."
+        "body": {
+          "en": "We build software that solves real problems,<br />not unnecessary features.",
+          "id": "Kami membangun software yang menyelesaikan masalah nyata,<br />bukan fitur yang tidak diperlukan."
         }
-      ]
-    },
-    "process": {
-      "eyebrow": "Alur Kerja",
-      "title": "Sederhana dan terarah",
-      "steps": [
-        { "title": "Discovery", "body": "Memahami tujuan dan kebutuhan Anda." },
-        { "title": "Perencanaan", "body": "Menentukan ruang lingkup dan desain solusi." },
-        { "title": "Pengembangan", "body": "Membangun produk dengan pembaruan berkala." },
-        { "title": "Pengujian", "body": "Memastikan setiap fitur berjalan dengan baik." },
-        { "title": "Peluncuran", "body": "Produk siap digunakan dan dikembangkan." }
-      ]
-    },
-    "faq": {
-      "eyebrow": "FAQ",
-      "title": "Pertanyaan yang sering diajukan",
-      "items": [
-        {
-          "q": "Apakah bisa membuat fitur kustom?",
-          "a": "Kustomisasi adalah spesialisasi kami. Kami membangun software yang sesuai alur kerja Anda, termasuk fitur khusus, otomasi, dan integrasi AI."
+      },
+      {
+        "title": {
+          "en": "Sustainable",
+          "id": "Berkelanjutan"
         },
-        {
-          "q": "Berapa estimasi biaya pengerjaan proyek?",
-          "a": "Setiap proyek berbeda. Layanan kami mulai dari Rp2 juta, tergantung fitur, kompleksitas, dan ruang lingkup pengembangan."
-        },
-        {
-          "q": "Berapa lama proses pembuatan aplikasi?",
-          "a": "Proyek kecil bisa selesai sekitar satu minggu, sedangkan sistem yang lebih besar dapat memerlukan beberapa bulan tergantung kompleksitasnya."
-        },
-        {
-          "q": "Apakah ada garansi?",
-          "a": "Ya. Kami menyediakan dukungan pasca-rilis, perbaikan bug, dan garansi fitur untuk memastikan aplikasi Anda berjalan andal."
-        },
-        {
-          "q": "Apakah melayani klien di luar daerah?",
-          "a": "Ya. Kita bisa bekerja secara remote dengan jangkauan seluruh Indonesia dan internasional. Selama komunikasi berjalan baik, jarak bukan kendala."
+        "body": {
+          "en": "Maintainable architecture, scalable code,<br />and long-term support for future growth.",
+          "id": "Arsitektur yang mudah dirawat, kode yang skalabel,<br />dan dukungan jangka panjang untuk pertumbuhan ke depan."
         }
-      ]
+      },
+      {
+        "title": {
+          "en": "Affordable",
+          "id": "Terjangkau"
+        },
+        "body": {
+          "en": "Cost-effective solutions without compromising quality,<br />we ensure value for your investment.",
+          "id": "Solusi hemat biaya tanpa mengorbankan kualitas,<br />kami memastikan nilai terbaik untuk investasi Anda."
+        }
+      }
+    ]
+  },
+  "services": {
+    "eyebrow": {
+      "en": "Services",
+      "id": "Layanan"
     },
-    "contact": {
-      "eyebrow": "Mulai Proyek",
-      "title": "Ada ide?",
-      "lead": "Setiap produk hebat dimulai dengan diskusi. <br />Mari kita jalin komunikasi yang baik.",
-      "button": "Hubungi Kami"
+    "title": {
+      "en": "Our expertise",
+      "id": "Keahlian kami"
     },
-    "footer": {
-      "brand": "PAGODEV membuat website dan aplikasi kustom yang jelas, fungsional, dan sesuai kebutuhan Anda.",
-      "navTitle": "Menu Utama",
-      "navItems": ["Tentang Kami", "Layanan", "Alur Kerja", "FAQ"],
-      "contactTitle": "Hubungi Kami",
-      "contactEmail": "hello@pagodev.id",
-      "contactPhone": "+62 822 4342 9301",
-      "contactLocation": "Yogyakarta, Indonesia",
-      "insideButton": "inside:pagodev",
-      "copyright": "Hak cipta dilindungi."
+    "lead": {
+      "en": "Every project is different.<br />These are the services we build most often.",
+      "id": "Setiap proyek itu berbeda.<br />Ini layanan yang paling sering kami bangun."
     },
-    "egg": {
-      "aria": "Easter egg PAGODEV",
-      "title": "<inside:pagodev>",
-      "body": "<br />Anda menemukan salah satu sudut tersembunyi di website kami.<br /><br />Kami menghargai orang yang mengeksplorasi lebih dari yang terlihat.<br />Jika Anda percaya software hebat dimulai dari rasa ingin tahu, perhatian pada detail, dan rekayasa yang matang, kami ingin membangunnya bersama Anda.<br /><br />Mari ciptakan sesuatu yang luar biasa bersama.",
-      "ctaWhatsapp": "WhatsApp Langsung",
-      "close": "Tutup [esc]"
+    "items": [
+      {
+        "title": {
+          "en": "Personal Website",
+          "id": "Website Personal"
+        },
+        "body": {
+          "en": "Personal profile, portfolio, or professional landing page.",
+          "id": "Profil pribadi, portofolio, atau landing page profesional."
+        }
+      },
+      {
+        "title": {
+          "en": "Company Website",
+          "id": "Website Perusahaan"
+        },
+        "body": {
+          "en": "Informative and trustworthy company website.",
+          "id": "Website perusahaan yang informatif dan terpercaya."
+        }
+      },
+      {
+        "title": {
+          "en": "Information System",
+          "id": "Sistem Informasi"
+        },
+        "body": {
+          "en": "Data and workflow management in one system.",
+          "id": "Pengelolaan data dan alur kerja dalam satu sistem."
+        }
+      },
+      {
+        "title": {
+          "en": "Mobile App",
+          "id": "Aplikasi Mobile"
+        },
+        "body": {
+          "en": "Practical apps for Android and iOS users.",
+          "id": "Aplikasi praktis untuk pengguna Android dan iOS."
+        }
+      },
+      {
+        "title": {
+          "en": "Desktop App",
+          "id": "Aplikasi Desktop"
+        },
+        "body": {
+          "en": "Operational applications that are comfortable to use on desktop.",
+          "id": "Aplikasi operasional yang nyaman digunakan di desktop."
+        }
+      },
+      {
+        "title": {
+          "en": "Special Request",
+          "id": "Permintaan Khusus"
+        },
+        "body": {
+          "en": "Have unique requirements? Let's discuss the right solution.",
+          "id": "Punya kebutuhan unik? Mari diskusikan solusi yang tepat."
+        }
+      }
+    ]
+  },
+  "process": {
+    "eyebrow": {
+      "en": "Workflow",
+      "id": "Alur Kerja"
+    },
+    "title": {
+      "en": "Simple and focused",
+      "id": "Sederhana dan terarah"
+    },
+    "steps": [
+      {
+        "title": {
+          "en": "Discovery",
+          "id": "Discovery"
+        },
+        "body": {
+          "en": "Understanding your goals and needs.",
+          "id": "Memahami tujuan dan kebutuhan Anda."
+        }
+      },
+      {
+        "title": {
+          "en": "Planning",
+          "id": "Perencanaan"
+        },
+        "body": {
+          "en": "Defining scope and solution design.",
+          "id": "Menentukan batasan dan desain solusi."
+        }
+      },
+      {
+        "title": {
+          "en": "Development",
+          "id": "Pengembangan"
+        },
+        "body": {
+          "en": "Building the product with regular updates.",
+          "id": "Membuat produk dan rutin memperbarui."
+        }
+      },
+      {
+        "title": {
+          "en": "Testing",
+          "id": "Pengujian"
+        },
+        "body": {
+          "en": "Ensuring features work properly.",
+          "id": "Memastikan setiap fitur berjalan dengan baik."
+        }
+      },
+      {
+        "title": {
+          "en": "Launch",
+          "id": "Peluncuran"
+        },
+        "body": {
+          "en": "Your product is ready to use and scale.",
+          "id": "Produk siap digunakan dan dikembangkan."
+        }
+      }
+    ]
+  },
+  "faq": {
+    "eyebrow": {
+      "en": "FAQ",
+      "id": "FAQ"
+    },
+    "title": {
+      "en": "Frequently asked questions",
+      "id": "Pertanyaan yang sering diajukan"
+    },
+    "items": [
+      {
+        "q": {
+          "en": "Can you build custom features?",
+          "id": "Apakah bisa membuat fitur kustom?"
+        },
+        "a": {
+          "en": "Custom development is our specialty. We build software tailored to your workflows, with custom features, automation, and AI integration.",
+          "id": "Kustomisasi adalah spesialisasi kami. Kami membangun software yang sesuai alur kerja Anda, termasuk fitur khusus, otomasi, dan integrasi AI."
+        }
+      },
+      {
+        "q": {
+          "en": "How much does a project cost?",
+          "id": "Berapa estimasi biaya pengerjaan proyek?"
+        },
+        "a": {
+          "en": "Every project is different. Our services start from IDR 2 million, depending on features, complexity, and development scope.",
+          "id": "Setiap proyek berbeda. Layanan kami mulai dari Rp2 juta, tergantung fitur, kompleksitas, dan ruang lingkup pengembangan."
+        }
+      },
+      {
+        "q": {
+          "en": "How long does development take?",
+          "id": "Berapa lama proses pembuatan aplikasi?"
+        },
+        "a": {
+          "en": "Small projects may take around one week, while larger systems can require several months depending on their complexity.",
+          "id": "Proyek kecil bisa selesai sekitar satu minggu, sedangkan sistem yang lebih besar dapat memerlukan beberapa bulan tergantung kompleksitasnya."
+        }
+      },
+      {
+        "q": {
+          "en": "Do you provide warranty?",
+          "id": "Apakah ada garansi?"
+        },
+        "a": {
+          "en": "Yes. We provide post-launch support, bug fixes, and feature warranty to ensure your application runs reliably.",
+          "id": "Ya. Kami menyediakan dukungan pasca-rilis, perbaikan bug, dan garansi fitur untuk memastikan aplikasi Anda berjalan andal."
+        }
+      },
+      {
+        "q": {
+          "en": "Do you serve clients outside your city?",
+          "id": "Apakah melayani klien di luar daerah?"
+        },
+        "a": {
+          "en": "Yes. We work remotely with clients across Indonesia and internationally. As long as communication runs smoothly, distance is never a limitation.",
+          "id": "Ya. Kita bisa bekerja secara remote dengan jangkauan seluruh Indonesia dan internasional. Selama komunikasi berjalan baik, jarak bukan kendala."
+        }
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": {
+      "en": "Start Project",
+      "id": "Mulai Proyek"
+    },
+    "title": {
+      "en": "Have an idea?",
+      "id": "Ada ide?"
+    },
+    "lead": {
+      "en": "Every great product starts with a conversation.<br />Let's build yours together.",
+      "id": "Setiap produk hebat dimulai dengan diskusi. <br />Mari kita jalin komunikasi yang baik."
+    },
+    "button": {
+      "en": "Contact Us",
+      "id": "Hubungi Kami"
+    }
+  },
+  "footer": {
+    "brand": {
+      "en": "PAGODEV creates websites and custom applications that are clear, functional, and ready to evolve with your needs.",
+      "id": "PAGODEV membuat website dan aplikasi kustom yang jelas, fungsional, dan sesuai kebutuhan Anda."
+    },
+    "navTitle": {
+      "en": "Navigation",
+      "id": "Menu Utama"
+    },
+    "navItems": [
+      {
+        "en": "About Us",
+        "id": "Tentang Kami"
+      },
+      {
+        "en": "Services",
+        "id": "Layanan"
+      },
+      {
+        "en": "Workflow",
+        "id": "Alur Kerja"
+      },
+      {
+        "en": "FAQ",
+        "id": "FAQ"
+      }
+    ],
+    "contactTitle": {
+      "en": "Contact",
+      "id": "Hubungi Kami"
+    },
+    "contactEmail": {
+      "en": "hello@pagodev.id",
+      "id": "hello@pagodev.id"
+    },
+    "contactPhone": {
+      "en": "+62 822 4342 9301",
+      "id": "+62 822 4342 9301"
+    },
+    "contactLocation": {
+      "en": "Yogyakarta, Indonesia",
+      "id": "Yogyakarta, Indonesia"
+    },
+    "insideButton": {
+      "en": "inside:pagodev",
+      "id": "inside:pagodev"
+    },
+    "copyright": {
+      "en": "All rights reserved.",
+      "id": "Hak cipta dilindungi."
+    }
+  },
+  "egg": {
+    "aria": {
+      "en": "Easter egg PAGODEV",
+      "id": "Easter egg PAGODEV"
+    },
+    "title": {
+      "en": "<inside:pagodev>",
+      "id": "<inside:pagodev>"
+    },
+    "body": {
+      "en": "<br />You found one of the hidden corners of our website.<br /><br />We appreciate people who explore beyond the obvious.<br />If you believe great software starts with curiosity, attention to detail, and thoughtful engineering, we'd love to build with you.<br /><br />Let's create something remarkable together.",
+      "id": "<br />Anda menemukan salah satu sudut tersembunyi di website kami.<br /><br />Kami menghargai orang yang mengeksplorasi lebih dari yang terlihat.<br />Jika Anda percaya software hebat dimulai dari rasa ingin tahu, perhatian pada detail, dan rekayasa yang matang, kami ingin membangunnya bersama Anda.<br /><br />Mari ciptakan sesuatu yang luar biasa bersama."
+    },
+    "ctaWhatsapp": {
+      "en": "Direct Whatsapp",
+      "id": "WhatsApp Langsung"
+    },
+    "close": {
+      "en": "Close [esc]",
+      "id": "Tutup [esc]"
     }
   }
 }
