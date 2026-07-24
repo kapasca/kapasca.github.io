@@ -1,0 +1,131 @@
+/* =========================================================
+  PAGODEV — DESIGN TOKENS
+  Source: logo DNA (modules, links, signals, rounded geometry)
+  ========================================================= */
+
+:root {
+  /* ---- Brand colors (sampled from official logo) ---- */
+  --c-blue:   #4A95CF;
+  --c-green:  #6CC37E;
+  --c-red:    #D55E5E;
+  --c-yellow: #D6BA39;
+
+
+  /* ---- Neutrals ---- */
+  --ink-900: #0B0C0D;
+  --ink-800: #111111;
+  --ink-700: #1B1C1E;
+  --ink-600: #2A2C2F;
+  --ink-500: #4A4D52;
+  --ink-400: #6B6F76;
+  --ink-300: #91959C;
+  --ink-200: #C6C9CE;
+  --ink-100: #E7E9EC;
+  --ink-050: #F4F5F6;
+  --white:   #FFFFFF;
+
+  /* ---- Spacing scale ---- */
+  --sp-1: 8px;
+  --sp-2: 16px;
+  --sp-3: 24px;
+  --sp-4: 40px;
+  --sp-5: 64px;
+  --sp-6: 96px;
+
+  /* ---- Radius ---- */
+  --radius: 20px;
+  --radius-sm: 12px;
+  --radius-lg: 28px;
+  --radius-pill: 10px;
+
+  /* ---- Motion ---- */
+  --dur-1: 150ms;
+  --dur-2: 250ms;
+  --dur-3: 400ms;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in: cubic-bezier(0.5, 0, 0.75, 0);
+
+  /* ---- Type ---- */
+  --font-display: 'Lexend', system-ui, sans-serif;
+  --font-body: 'Lexend', system-ui, sans-serif;
+  --font-mono: 'Lexend', system-ui, sans-serif;
+  --text-xs: clamp(0.8rem, 0.16vw + 0.77rem, 1rem);
+  --text-sm: clamp(0.9rem, 0.18vw + 0.86rem, 1.125rem);
+  --text-base: clamp(1rem, 0.25vw + 0.95rem, 1.25rem);
+
+  /* ---- Layout ---- */
+  --container: 1240px;
+  --header-h: 124px;
+
+  /* ---- Elevation ---- */
+  --shadow-sm: 0 1px 2px rgba(11,12,13,0.06), 0 1px 1px rgba(11,12,13,0.04);
+  --shadow-md: 0 8px 24px -8px rgba(11,12,13,0.16);
+  --shadow-lg: 0 24px 64px -16px rgba(11,12,13,0.24);
+  --shadow-glow-blue: 0 0 0 1px rgba(74,149,207,0.15), 0 8px 32px -8px rgba(74,149,207,0.28);
+
+  color-scheme: dark;
+}
+
+/* ---- Theme: Dark (default) ---- */
+:root,
+[data-theme="dark"] {
+  --bg: var(--ink-800);
+  --bg-elevated: var(--ink-700);
+  --bg-surface: var(--ink-600);
+  --border: rgba(255,255,255,0.09);
+  --border-strong: rgba(255,255,255,0.16);
+  --text-primary: #F5F6F7;
+  --text-secondary: #A8ABB2;
+  --text-tertiary: #6E7178;
+  --glass-bg: rgba(17,17,17,0.62);
+  --scrim: rgba(11,12,13,0.7);
+}
+
+/* ---- Theme: Light ---- */
+[data-theme="light"] {
+  color-scheme: light;
+  --bg: var(--white);
+  --bg-elevated: var(--ink-050);
+  --bg-surface: #EEF0F2;
+  --border: rgba(11,12,13,0.09);
+  --border-strong: rgba(11,12,13,0.14);
+  --text-primary: var(--ink-800);
+  --text-secondary: var(--ink-500);
+  --text-tertiary: var(--ink-300);
+  --glass-bg: rgba(255,255,255,0.66);
+  --scrim: rgba(255,255,255,0.7);
+  --shadow-sm: 0 1px 2px rgba(11,12,13,0.05), 0 1px 1px rgba(11,12,13,0.03);
+  --shadow-md: 0 8px 24px -10px rgba(11,12,13,0.14);
+  --shadow-lg: 0 24px 64px -20px rgba(11,12,13,0.18);
+}
+
+@media (max-width: 1024px) {
+  :root {
+    --header-h: 110px;
+    --sp-5: 56px;
+    --sp-6: 80px;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --header-h: 92px;
+    --sp-3: 20px;
+    --sp-4: 32px;
+    --sp-5: 48px;
+    --sp-6: 64px;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --header-h: 84px;
+    --sp-2: 14px;
+    --sp-3: 16px;
+    --sp-4: 24px;
+    --sp-5: 40px;
+    --sp-6: 52px;
+    --radius: 16px;
+    --radius-lg: 22px;
+  }
+}
