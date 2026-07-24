@@ -72,56 +72,74 @@
     return !!(I18N && I18N.en && I18N.id);
   }
 
-  function setText(selector, text) {
-    var el = document.querySelector(selector);
-    if (el) el.textContent = text;
+  function getI18nValue(source, path) {
+    if (!source || !path) return null;
+    return path.split(".").reduce(function (value, segment) {
+      if (value === null || value === undefined) return null;
+      return value[segment];
+    }, source);
   }
 
-  function setHtml(selector, html) {
-    var el = document.querySelector(selector);
-    if (el) el.innerHTML = html;
-  }
+  function setI18nText(el, value) {
+    if (!el || value === null || value === undefined) return;
+    var preserveSpec = el.getAttribute("data-i18n-preserve");
+    if (preserveSpec) {
+      var preserveRule = "append";
+      var preserveSelector = preserveSpec;
 
-  function setTextAt(selector, index, text) {
-    var list = document.querySelectorAll(selector);
-    if (list[index]) list[index].textContent = text;
-  }
+      if (preserveSpec.indexOf("prepend:") === 0) {
+        preserveRule = "prepend";
+        preserveSelector = preserveSpec.slice(8);
+      } else if (preserveSpec.indexOf("append:") === 0) {
+        preserveSelector = preserveSpec.slice(7);
+      }
 
-  function setHtmlAt(selector, index, html) {
-    var list = document.querySelectorAll(selector);
-    if (list[index]) list[index].innerHTML = html;
-  }
-
-  function setEyebrowText(selector, text) {
-    var el = document.querySelector(selector);
-    if (!el) return;
-    var dot = el.querySelector(".dot");
-    var dotClone = dot ? dot.cloneNode(true) : null;
-    el.textContent = text;
-    if (dotClone) el.prepend(dotClone);
-  }
-
-  function setButtonTextKeepIcon(selector, text) {
-    var el = document.querySelector(selector);
-    if (!el) return;
-    var icon = el.querySelector("svg");
-    if (icon) {
-      var iconClone = icon.cloneNode(true);
-      el.textContent = text + " ";
-      el.appendChild(iconClone);
+      var preserved = el.querySelector(preserveSelector);
+      var preservedClone = preserved ? preserved.cloneNode(true) : null;
+      el.textContent = value;
+      if (preservedClone) {
+        if (preserveRule === "prepend") {
+          el.insertBefore(preservedClone, el.firstChild);
+        } else {
+          el.appendChild(preservedClone);
+        }
+      }
       return;
     }
-    el.textContent = text;
+    el.textContent = value;
   }
 
-  function setSummaryTextAt(selector, index, text) {
-    var list = document.querySelectorAll(selector);
-    var el = list[index];
-    if (!el) return;
-    var plus = el.querySelector(".plus");
-    var plusClone = plus ? plus.cloneNode(true) : null;
-    el.textContent = text;
-    if (plusClone) el.appendChild(plusClone);
+  function applyI18nContent(source) {
+    document.querySelectorAll("[data-i18n], [data-i18n-html], [data-i18n-attr]").forEach(function (el) {
+      var textKey = el.getAttribute("data-i18n");
+      var htmlKey = el.getAttribute("data-i18n-html");
+      var textValue = textKey ? getI18nValue(source, textKey) : null;
+
+      if (htmlKey) {
+        var htmlValue = getI18nValue(source, htmlKey);
+        if (htmlValue !== null && htmlValue !== undefined) {
+          el.innerHTML = htmlValue;
+        }
+      } else if (textKey) {
+        setI18nText(el, textValue);
+      }
+
+      var attrSpec = el.getAttribute("data-i18n-attr");
+      if (!attrSpec) return;
+
+      attrSpec.split(";").forEach(function (pair) {
+        var trimmed = pair.trim();
+        if (!trimmed) return;
+        var colonIndex = trimmed.indexOf(":");
+        if (colonIndex < 1) return;
+        var attrName = trimmed.slice(0, colonIndex).trim();
+        var attrKey = trimmed.slice(colonIndex + 1).trim();
+        var attrValue = getI18nValue(source, attrKey);
+        if (attrValue !== null && attrValue !== undefined) {
+          el.setAttribute(attrName, attrValue);
+        }
+      });
+    });
   }
 
   function getPreferredLanguage() {
@@ -165,7 +183,8 @@
     var mobileLangBtns = document.querySelectorAll("[data-mobile-lang-toggle]");
     var nextLanguageLabel = currentLanguage === "id" ? "English" : "Bahasa Indonesia";
 
-    setText("[data-mobile-lang-text]", nextLanguageLabel);
+    var mobileLangText = document.querySelector("[data-mobile-lang-text]");
+    if (mobileLangText) mobileLangText.textContent = nextLanguageLabel;
 
     if (mobileThemeBtn) {
       mobileThemeBtn.setAttribute("aria-pressed", theme === "light");
@@ -231,98 +250,16 @@
     currentLanguage = next;
 
     root.setAttribute("lang", next);
-    document.title = t.metaTitle;
     try {
       localStorage.setItem("pagodev-lang", next);
     } catch (e) {}
+    applyI18nContent(t);
 
-    setText(".cmdk-label", t.header.quickAccess);
-    setText(".header-cta", t.header.startProject);
-
-    var cmdkOpenBtn = document.querySelector("[data-cmdk-open]");
-    if (cmdkOpenBtn) cmdkOpenBtn.setAttribute("aria-label", t.header.quickAccessAria);
-
-    var cmdkDialog = document.querySelector(".cmdk-overlay");
-    if (cmdkDialog) cmdkDialog.setAttribute("aria-label", t.cmdk.dialogAria);
-
-    if (cmdkInput) {
-      cmdkInput.setAttribute("placeholder", t.cmdk.searchPlaceholder);
-      cmdkInput.setAttribute("aria-label", t.cmdk.searchAria);
-    }
-
-    var langBtn = document.querySelector("[data-lang-toggle]");
-    if (langBtn) {
-      langBtn.textContent = t.header.langCode;
-      langBtn.setAttribute("aria-label", t.header.langToggleAria);
-    }
-
-    setText(".mobile-menu-title", t.header.mobileMenuTitle);
-
-    setEyebrowText(".hero-copy .eyebrow", t.hero.eyebrow);
-    setText(".hero-copy h1", t.hero.title);
-    setHtml(".hero-copy .lead", t.hero.lead);
-    setButtonTextKeepIcon(".hero-actions .btn-primary", t.hero.ctaPrimary);
-    setText(".hero-actions .btn-ghost", t.hero.ctaSecondary);
-
-    setEyebrowText("#about .eyebrow", t.about.eyebrow);
-    setHtml("#about h2", t.about.title);
-    setHtml("#about .lead", t.about.lead);
-    t.about.principles.forEach(function (item, i) {
-      setTextAt(".about-principles .principle h4", i, item.title);
-      setHtmlAt(".about-principles .principle p", i, item.body);
-    });
-
-    setEyebrowText("#services .eyebrow", t.services.eyebrow);
-    setText("#services .section-head h2", t.services.title);
-    setHtml("#services .section-head p", t.services.lead);
-    t.services.items.forEach(function (item, i) {
-      setTextAt(".services-grid .module-card h3", i, item.title);
-      setTextAt(".services-grid .module-card p", i, item.body);
-    });
-
-    setEyebrowText("#process .eyebrow", t.process.eyebrow);
-    setText("#process .section-head h2", t.process.title);
-    t.process.steps.forEach(function (step, i) {
-      setTextAt(".process-step h4", i, step.title);
-      setTextAt(".process-step p", i, step.body);
-    });
-
-    setEyebrowText("#faq .eyebrow", t.faq.eyebrow);
-    setText("#faq .section-head h2", t.faq.title);
-    t.faq.items.forEach(function (item, i) {
-      setSummaryTextAt(".faq-item .faq-question", i, item.q);
-      setTextAt(".faq-item .faq-answer p", i, item.a);
-    });
-
-    setEyebrowText("#contact .eyebrow", t.contact.eyebrow);
-    setText("#contact h2", t.contact.title);
-    setHtml("#contact .lead", t.contact.lead);
-    setButtonTextKeepIcon("#contact .btn-primary", t.contact.button);
-
-    setHtml(".footer-brand-desc", t.footer.brand);
-    setTextAt("nav.footer-col h4", 0, t.footer.navTitle);
-    setTextAt("nav.footer-col ul li a", 0, t.footer.navItems[0]);
-    setTextAt("nav.footer-col ul li a", 1, t.footer.navItems[1]);
-    setTextAt("nav.footer-col ul li a", 2, t.footer.navItems[2]);
-    setTextAt("nav.footer-col ul li a", 3, t.footer.navItems[3]);
-    setTextAt(".footer-col h4", 1, t.footer.contactTitle);
-    setText(".contact-list li:nth-child(1) .contact-item span", t.footer.contactEmail);
-    setText(".contact-list li:nth-child(2) .contact-item span", t.footer.contactPhone);
-    setText(".contact-list li:nth-child(3) .contact-item span", t.footer.contactLocation);
-    setText(".footer-egg", t.footer.insideButton);
-
-    var yearNow = new Date().getFullYear();
     var footerCopy = document.querySelector("[data-footer-copy]");
     if (footerCopy) {
-      footerCopy.innerHTML = "\u00A9 <span data-year>" + yearNow + "</span> PAGODEV. " + t.footer.copyright;
+      var yearNow = new Date().getFullYear();
+      footerCopy.innerHTML = "&copy; <span data-year>" + yearNow + "</span> PAGODEV. " + t.footer.copyright;
     }
-
-    var eggOverlay = document.querySelector(".egg-overlay");
-    if (eggOverlay) eggOverlay.setAttribute("aria-label", t.egg.aria);
-    setText(".egg-content h2", t.egg.title);
-    setHtml(".egg-content p", t.egg.body);
-    setText(".egg-actions .btn-primary", t.egg.ctaWhatsapp);
-    setText(".egg-close", t.egg.close);
 
     cmdkItemsData = buildCmdkItems(next);
     if (cmdkOverlay && cmdkOverlay.classList.contains("is-open")) {

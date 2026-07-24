@@ -87,7 +87,7 @@
 .process-step h4 { margin-bottom: 8px; }
 .process-step p { font-size: var(--text-sm); margin: 0; }
 .process-rail .rail-line {
-  position: absolute; top: 4px; left: -50px; right: -50px; height: 24px;
+  position: absolute; top: 0; left: -50px; right: -50px; height: 27px;
   background: var(--bg);
   border-radius: 999px;
 }
