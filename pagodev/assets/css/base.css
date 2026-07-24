@@ -104,7 +104,7 @@ section { position: relative; padding-block: var(--sp-6); }
 section[id] { scroll-margin-top: calc(var(--header-h) + var(--sp-6)); }
 @media (max-width: 720px) {
   section { padding-block: var(--sp-5); }
-  .container { padding-inline: clamp(22px, 6vw, 30px); }
+  .container { padding-inline: clamp(22px, 6vw, 30px); padding-top: var(--sp-3); }
 }
 
 @media (max-width: 1024px) {
