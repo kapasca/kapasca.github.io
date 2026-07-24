@@ -148,7 +148,7 @@
 
 /* scroll progress signal arc, fixed at header bottom edge */
 .scroll-signal {
-  position: absolute; left: 0; bottom: 0; height: 2px; width: 100%;
+  position: absolute; left: 0; bottom: 0; height: 5px; width: 100%;
   background: var(--border);
   z-index: 2;
 }
