@@ -163,7 +163,16 @@
 
 /* ---- FAQ ---- */
 .faq-list { border-top: 1px solid var(--border); }
-.faq-item { border-bottom: 1px solid var(--border); }
+.faq-item {
+  padding: 0 var(--sp-3);
+  border-bottom: 1px solid var(--border);
+  transition: background-color var(--dur-2) var(--ease), border-color var(--dur-2) var(--ease);
+}
+.faq-item:hover,
+.faq-item:focus-within {
+  background: color-mix(in srgb, var(--accent, var(--c-blue)) 8%, transparent);
+  border-color: var(--border-strong);
+}
 .faq-question {
   width: 100%;
   display: flex; align-items: center; justify-content: space-between;
@@ -173,12 +182,21 @@
   text-align: left;
   font-family: var(--font-display); font-weight: 600; font-size: 1.02rem;
   color: var(--text-primary);
+  transition: color var(--dur-2) var(--ease);
 }
+.faq-item:hover .faq-question,
+.faq-item:focus-within .faq-question { color: var(--accent, var(--c-blue)); }
 .faq-question .plus {
   flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%;
   border: 1px solid var(--border-strong);
   display: grid; place-items: center;
   position: relative;
+  transition: border-color var(--dur-2) var(--ease), background-color var(--dur-2) var(--ease);
+}
+.faq-item:hover .faq-question .plus,
+.faq-item:focus-within .faq-question .plus {
+  border-color: var(--accent, var(--c-blue));
+  background: rgba(74, 149, 207, 0.1);
 }
 .faq-question .plus::before, .faq-question .plus::after {
   content: ""; position: absolute; background: var(--text-primary);
@@ -224,11 +242,18 @@
   text-align: center;
   isolation: isolate;
 }
-[data-theme="light"] .final-cta { background: var(--ink-800); }
+[data-theme="light"] .final-cta {
+  background: var(--bg);
+  border: 1px solid var(--border);
+}
 .final-cta h2, .final-cta .eyebrow { color: #F5F6F7; }
 .final-cta p { color: #A8ABB2; }
+[data-theme="light"] .final-cta h2,
+[data-theme="light"] .final-cta .eyebrow { color: var(--text-primary); }
+[data-theme="light"] .final-cta p { color: var(--text-secondary); }
 .final-cta .cta-actions { display: flex; justify-content: center; gap: var(--sp-2); flex-wrap: wrap; margin-top: var(--sp-3); }
 .final-cta .btn-ghost { border-color: rgba(255,255,255,0.2); color: #F5F6F7; }
+[data-theme="light"] .final-cta .btn-ghost { border-color: var(--border-strong); color: var(--text-primary); }
 .final-cta .btn-ghost:hover { border-color: var(--c-blue); }
 .final-cta-field {
   position: absolute; inset: 0; opacity: 1;
