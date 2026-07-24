@@ -152,12 +152,16 @@
 @media (max-width: 768px) {
   .faq-question {
     padding: var(--sp-2) 0;
-    font-size: 0.97rem;
+    font-size: 0.8rem;
   }
 
   .faq-question .plus {
     width: 24px;
     height: 24px;
+  }
+
+  .faq-answer p {
+    font-size: 0.7rem;
   }
 }
 

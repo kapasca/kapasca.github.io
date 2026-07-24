@@ -13,6 +13,10 @@
   var cmdkInput = document.querySelector(".cmdk-input");
   var cmdkList = document.querySelector(".cmdk-list");
   var cmdkTriggers = document.querySelectorAll("[data-cmdk-open]");
+  var mobileNav = document.querySelector("[data-mobile-nav]");
+  var mobileMenuOverlay = document.querySelector(".mobile-menu-overlay");
+  var mobileMenuToggle = document.querySelector("[data-mobile-menu-toggle]");
+  var mobileMenuClose = document.querySelector("[data-mobile-menu-close]");
   var activeIndex = 0;
   var currentLanguage = "en";
   var cmdkItemsData = [];
@@ -21,6 +25,7 @@
   var FALLBACK_TEXT = {
     en: {
       header: {
+        quickAccess: "Quick Access",
         themeToLight: "Enable light mode",
         themeToDark: "Enable dark mode",
         langCode: "EN",
@@ -32,6 +37,7 @@
     },
     id: {
       header: {
+        quickAccess: "Akses Cepat",
         themeToLight: "Aktifkan mode terang",
         themeToDark: "Aktifkan mode gelap",
         langCode: "ID",
@@ -144,6 +150,54 @@
     });
   }
 
+  function getThemeModeLabel(theme, lang) {
+    var nextLang = lang === "id" ? "id" : "en";
+    if (nextLang === "id") {
+      return theme === "light" ? "Terang" : "Gelap";
+    }
+    return theme === "light" ? "Light" : "Dark";
+  }
+
+  function updateMobileMenuLabels() {
+    var source = hasTranslations() ? I18N[currentLanguage] || I18N.en : FALLBACK_TEXT[currentLanguage] || FALLBACK_TEXT.en;
+    var theme = root.getAttribute("data-theme") === "light" ? "light" : "dark";
+    var mobileThemeBtn = document.querySelector("[data-mobile-theme-toggle]");
+    var mobileLangBtns = document.querySelectorAll("[data-mobile-lang-toggle]");
+    var nextLanguageLabel = currentLanguage === "id" ? "English" : "Bahasa Indonesia";
+
+    setText("[data-mobile-lang-text]", nextLanguageLabel);
+
+    if (mobileThemeBtn) {
+      mobileThemeBtn.setAttribute("aria-pressed", theme === "light");
+      mobileThemeBtn.setAttribute("aria-label", theme === "light" ? source.header.themeToDark : source.header.themeToLight);
+      mobileThemeBtn.setAttribute("title", getThemeModeLabel(theme, currentLanguage));
+    }
+
+    mobileLangBtns.forEach(function (button) {
+      button.setAttribute("aria-label", source.header.langToggleAria);
+    });
+  }
+
+  function renderMobileNav() {
+    if (!mobileNav) return;
+
+    mobileNav.innerHTML = cmdkItemsData
+      .map(function (item) {
+        return (
+          '<a class="mobile-menu-item" href="' +
+          item.href +
+          '" data-mobile-nav-link="' +
+          item.href +
+          '"><span class="mobile-menu-item-label">' +
+          escapeHtml(item.label) +
+          '</span><span class="mobile-menu-item-meta">' +
+          escapeHtml(item.tag) +
+          "</span></a>"
+        );
+      })
+      .join("");
+  }
+
   function applyLanguageLite(lang) {
     var next = lang === "id" ? "id" : "en";
     var fallback = FALLBACK_TEXT[next];
@@ -161,6 +215,8 @@
     }
 
     cmdkItemsData = buildCmdkItems(next);
+    renderMobileNav();
+    updateMobileMenuLabels();
     updateThemeIcon(root.getAttribute("data-theme") === "light" ? "light" : "dark");
   }
 
@@ -265,6 +321,8 @@
       renderCmdkItems(cmdkInput ? cmdkInput.value : "");
     }
 
+    renderMobileNav();
+    updateMobileMenuLabels();
     updateThemeIcon(root.getAttribute("data-theme") === "light" ? "light" : "dark");
   }
 
@@ -323,6 +381,79 @@
     var t = hasTranslations() ? I18N[currentLanguage] || I18N.en : FALLBACK_TEXT[currentLanguage] || FALLBACK_TEXT.en;
     btn.setAttribute("aria-pressed", theme === "light");
     btn.setAttribute("aria-label", theme === "light" ? t.header.themeToDark : t.header.themeToLight);
+    updateMobileMenuLabels();
+  }
+
+  function openMobileMenu() {
+    if (!mobileMenuOverlay) return;
+    mobileMenuOverlay.classList.add("is-open");
+    mobileMenuOverlay.setAttribute("aria-hidden", "false");
+    if (mobileMenuToggle) mobileMenuToggle.setAttribute("aria-expanded", "true");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeMobileMenu() {
+    if (!mobileMenuOverlay) return;
+    mobileMenuOverlay.classList.remove("is-open");
+    mobileMenuOverlay.setAttribute("aria-hidden", "true");
+    if (mobileMenuToggle) mobileMenuToggle.setAttribute("aria-expanded", "false");
+    document.body.style.overflow = "";
+  }
+
+  function initMobileMenu() {
+    var mobileTheme = document.querySelector("[data-mobile-theme-toggle]");
+    var mobileLangButtons = document.querySelectorAll("[data-mobile-lang-toggle]");
+
+    if (mobileMenuToggle) {
+      mobileMenuToggle.addEventListener("click", function () {
+        var isOpen = mobileMenuOverlay && mobileMenuOverlay.classList.contains("is-open");
+        if (isOpen) {
+          closeMobileMenu();
+          return;
+        }
+        openMobileMenu();
+      });
+    }
+
+    if (mobileMenuClose) {
+      mobileMenuClose.addEventListener("click", closeMobileMenu);
+    }
+
+    if (mobileMenuOverlay) {
+      mobileMenuOverlay.addEventListener("click", function (e) {
+        if (e.target === mobileMenuOverlay) closeMobileMenu();
+      });
+    }
+
+    if (mobileNav) {
+      mobileNav.addEventListener("click", function (e) {
+        var link = e.target.closest("[data-mobile-nav-link]");
+        if (!link) return;
+        closeMobileMenu();
+        goTo(link.getAttribute("data-mobile-nav-link"));
+      });
+    }
+
+    if (mobileTheme) {
+      mobileTheme.addEventListener("click", function () {
+        toggleTheme();
+        closeMobileMenu();
+      });
+    }
+
+    mobileLangButtons.forEach(function (mobileLang) {
+      mobileLang.addEventListener("click", function () {
+        toggleLanguage();
+        closeMobileMenu();
+      });
+    });
+
+    window.addEventListener("resize", function () {
+      if (window.innerWidth > 980) closeMobileMenu();
+    });
+
+    renderMobileNav();
+    updateMobileMenuLabels();
   }
 
   /* ---------------------------------------------------
@@ -556,6 +687,7 @@
         e.preventDefault();
         openCmdk();
       } else if (e.key === "Escape") {
+        closeMobileMenu();
         if (cmdkOverlay && cmdkOverlay.classList.contains("is-open")) closeCmdk();
         closeEgg();
       }
@@ -584,6 +716,7 @@
 
     initReveal();
     initCmdk();
+    initMobileMenu();
     initKeyboardShortcuts();
     initEasterEgg();
     initFaq();
