@@ -113,7 +113,7 @@ section { position: relative; padding-block: var(--sp-6); }
 
 .section-head {
   max-width: 640px;
-  margin-bottom: var(--sp-5);
+  margin-bottom: var(--sp-4);
 }
 .section-head h2 { margin-top: var(--sp-2); }
 .section-head p { margin-top: var(--sp-2); }

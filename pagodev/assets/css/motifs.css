@@ -5,13 +5,17 @@
 
 /* Very subtle modular backdrop, used across many sections */
 .blueprint-field {
-  position: absolute; inset: 0;
+  position: absolute;
+  inset: 0;
   background-image:
     linear-gradient(var(--border) 1px, transparent 1px),
     linear-gradient(90deg, var(--border) 1px, transparent 1px);
   background-size: 56px 56px;
-  -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, #000 0%, transparent 75%);
-  mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, #000 0%, transparent 75%);
+  background-position: center;
+  -webkit-mask-image: linear-gradient(to bottom, #000 0 8%, transparent 26% 100%);
+  mask-image: linear-gradient(to bottom, #000 0 8%, transparent 26% 100%);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
   opacity: 0.5;
   pointer-events: none;
 }

@@ -3,8 +3,21 @@
    ========================================================= */
 
 .site-footer {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
   border-top: 1px solid var(--border);
   padding-block: var(--sp-5) var(--sp-3);
+}
+
+.site-footer > .blueprint-field {
+  z-index: 0;
+  opacity: 0.42;
+}
+
+.site-footer > .container {
+  position: relative;
+  z-index: 1;
 }
 .footer-top {
   display: grid;
