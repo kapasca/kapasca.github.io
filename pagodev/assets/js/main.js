@@ -277,7 +277,7 @@
   }
 
   function loadTranslations() {
-    return fetch("assets/js/i18n.json", { cache: "no-store" })
+    return fetch("assets/js/i18n.json")
       .then(function (response) {
         if (!response.ok) {
           throw new Error("Failed to load i18n.json");
@@ -571,24 +571,28 @@
   }
 
   function boot() {
-    loadTranslations().finally(function () {
-      initLanguage();
-      initTheme();
-      bindHeaderButtons();
+    initLanguage();
+    initTheme();
+    bindHeaderButtons();
 
-      if (!cmdkItemsData.length) {
-        cmdkItemsData = buildCmdkItems(currentLanguage);
+    if (!cmdkItemsData.length) {
+      cmdkItemsData = buildCmdkItems(currentLanguage);
+    }
+
+    document.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+
+    initReveal();
+    initCmdk();
+    initKeyboardShortcuts();
+    initEasterEgg();
+    initFaq();
+    initYear();
+
+    loadTranslations().then(function () {
+      if (hasTranslations()) {
+        applyLanguage(currentLanguage);
       }
-
-      document.addEventListener("scroll", onScroll, { passive: true });
-      onScroll();
-
-      initReveal();
-      initCmdk();
-      initKeyboardShortcuts();
-      initEasterEgg();
-      initFaq();
-      initYear();
     });
   }
 
