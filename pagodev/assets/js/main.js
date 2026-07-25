@@ -29,7 +29,7 @@
         quickAccess: "Quick Access",
         themeToLight: "Enable light mode",
         themeToDark: "Enable dark mode",
-        langCode: "EN",
+        langCode: "ID",
         langToggleAria: "Switch to Indonesian"
       },
       cmdk: {
@@ -41,7 +41,7 @@
         quickAccess: "Akses Cepat",
         themeToLight: "Aktifkan mode terang",
         themeToDark: "Aktifkan mode gelap",
-        langCode: "ID",
+        langCode: "EN",
         langToggleAria: "Ganti ke Bahasa Inggris"
       },
       cmdk: {
