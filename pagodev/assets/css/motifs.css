@@ -52,9 +52,9 @@
   content: "";
   position: absolute;
   right: var(--sp-3);
-  bottom: var(--sp-3);
-  width: 7px;
-  height: 7px;
+  top: var(--sp-3);
+  width: 14px;
+  height: 14px;
   border: 1px solid var(--accent);
   background-color: var(--accent);
   border-radius: 50%;
