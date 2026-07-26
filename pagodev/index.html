@@ -408,8 +408,9 @@
     </footer>
 
     <div class="portfolio-overlay" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Product details" data-i18n-attr="aria-label:portfolio.dialogAria">
-      <button class="portfolio-close" type="button" data-portfolio-close data-i18n="portfolio.close">{{portfolio.close}}</button>
       <div class="portfolio-dialog" role="document">
+        <button class="portfolio-close" type="button" data-portfolio-close data-i18n="portfolio.close">{{portfolio.close}}</button>
+        <div class="portfolio-dialog-scroll">
         <div class="portfolio-dialog-head">
           <img class="portfolio-dialog-media" src="assets/img/portfolio_sakumesebot.png" data-i18n-attr="alt:portfolio.items.0.imageAlt" alt="SAKUMESE app screenshot" loading="lazy" decoding="async" />
           <div class="portfolio-dialog-title-block">
@@ -445,6 +446,7 @@
         <div class="portfolio-status-row portfolio-status-block">
           <h4 data-i18n="portfolio.details.sakumese.statusTitle">{{portfolio.details.sakumese.statusTitle}}</h4>
           <p class="portfolio-status" data-i18n="portfolio.details.sakumese.statusValue">{{portfolio.details.sakumese.statusValue}}</p>
+        </div>
         </div>
       </div>
     </div>
