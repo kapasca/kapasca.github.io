@@ -71,7 +71,7 @@ p { color: var(--text-secondary); }
   h3 { font-size: clamp(1.08rem, 0.68vw + 0.88rem, 1.28rem); }
   h4 { font-size: clamp(0.98rem, 0.3vw + 0.92rem, 1.1rem); }
   .lead { font-size: clamp(0.94rem, 0.34vw + 0.84rem, 1rem); }
-  .eyebrow { font-size: clamp(0.6rem, 0.2vw + 0.55rem, 0.7rem) !important; }
+  .eyebrow { font-size: clamp(0.75rem, 0.2vw + 0.55rem, 0.7rem) !important; }
 }
 
 .eyebrow {
