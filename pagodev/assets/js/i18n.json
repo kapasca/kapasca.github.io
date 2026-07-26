@@ -93,6 +93,13 @@
       },
       {
         "label": {
+          "en": "Portfolio",
+          "id": "Portofolio"
+        },
+        "href": "#portfolio"
+      },
+      {
+        "label": {
           "en": "FAQ",
           "id": "FAQ"
         },
@@ -261,6 +268,136 @@
       }
     ]
   },
+  "portfolio": {
+    "eyebrow": {
+      "en": "Portfolio",
+      "id": "Portofolio"
+    },
+    "title": {
+      "en": "Products & Projects",
+      "id": "Produk & Proyek"
+    },
+    "lead": {
+      "en": "We focus on building practical solutions. Below are some of our products and projects that are publicly accessible.",
+      "id": "Kami berfokus membangun solusi yang praktis. Berikut beberapa produk dan proyek kami yang dapat diakses publik."
+    },
+    "items": [
+      {
+        "name": {
+          "en": "SAKUMESE",
+          "id": "SAKUMESE"
+        },
+        "body": {
+          "en": "Telegram-based personal finance bot/app for tracking income, expenses, balances, and reports through a simple chat interface.",
+          "id": "Bot/aplikasi keuangan pribadi berbasis Telegram untuk mencatat pemasukan, pengeluaran, saldo, dan laporan melalui antarmuka chat yang sederhana."
+        },
+        "openAria": {
+          "en": "Open SAKUMESE details",
+          "id": "Buka detail SAKUMESE"
+        },
+        "iconAlt": {
+          "en": "SAKUMESE logo",
+          "id": "Logo SAKUMESE"
+        },
+        "imageAlt": {
+          "en": "SAKUMESE app screenshot",
+          "id": "Tangkapan layar aplikasi SAKUMESE"
+        }
+      }
+    ],
+    "dialogAria": {
+      "en": "Product details",
+      "id": "Detail produk"
+    },
+    "close": {
+      "en": "Close [esc]",
+      "id": "Tutup [esc]"
+    },
+    "details": {
+      "sakumese": {
+        "title": {
+          "en": "SAKUMESE",
+          "id": "SAKUMESE"
+        },
+        "subtitle": {
+          "en": "Personal Finance Bot",
+          "id": "Bot Keuangan Pribadi"
+        },
+        "intro1": {
+          "en": "SAKUMESE is a Telegram-based personal finance bot designed to simplify daily financial management through a familiar chat interface. Users can record income and expenses, manage multiple accounts, monitor balances, and generate financial reports without installing additional software.",
+          "id": "SAKUMESE adalah bot keuangan pribadi berbasis Telegram yang dirancang untuk menyederhanakan pengelolaan keuangan harian melalui antarmuka chat yang familiar. Pengguna dapat mencatat pemasukan dan pengeluaran, mengelola banyak akun, memantau saldo, serta membuat laporan keuangan tanpa perlu memasang software tambahan."
+        },
+        "intro2": {
+          "en": "Powered by Google Apps Script and Google Sheets, SAKUMESE provides a lightweight yet reliable solution for personal bookkeeping. Transactions are processed in real time, while Google Cloud Platform (GCP) is used for logging and monitoring to ensure the service remains stable and easy to maintain.",
+          "id": "Dengan dukungan Google Apps Script dan Google Sheets, SAKUMESE menghadirkan solusi pembukuan pribadi yang ringan namun andal. Transaksi diproses secara real time, sementara Google Cloud Platform (GCP) digunakan untuk logging dan monitoring agar layanan tetap stabil dan mudah dipelihara."
+        },
+        "featuresTitle": {
+          "en": "Key Features",
+          "id": "Fitur Utama"
+        },
+        "features": [
+          {
+            "en": "Income & expense recording",
+            "id": "Pencatatan pemasukan & pengeluaran"
+          },
+          {
+            "en": "Multi-account management",
+            "id": "Manajemen multi-akun"
+          },
+          {
+            "en": "Real-time balance tracking",
+            "id": "Pelacakan saldo real time"
+          },
+          {
+            "en": "Financial reports",
+            "id": "Laporan keuangan"
+          },
+          {
+            "en": "Transaction history",
+            "id": "Riwayat transaksi"
+          },
+          {
+            "en": "Simple chat-based interface",
+            "id": "Antarmuka sederhana berbasis chat"
+          },
+          {
+            "en": "Cloud-powered data storage",
+            "id": "Penyimpanan data berbasis cloud"
+          }
+        ],
+        "stackTitle": {
+          "en": "Platform & Tech Stack",
+          "id": "Platform & Tech Stack"
+        },
+        "stack": [
+          {
+            "en": "Telegram Bot API",
+            "id": "Telegram Bot API"
+          },
+          {
+            "en": "Google Apps Script",
+            "id": "Google Apps Script"
+          },
+          {
+            "en": "Google Spreadsheet",
+            "id": "Google Spreadsheet"
+          },
+          {
+            "en": "Google Cloud Platform",
+            "id": "Google Cloud Platform"
+          }
+        ],
+        "statusTitle": {
+          "en": "Status",
+          "id": "Status"
+        },
+        "statusValue": {
+          "en": "Publicly Available",
+          "id": "Tersedia untuk Publik"
+        }
+      }
+    }
+  },
   "process": {
     "eyebrow": {
       "en": "Workflow",
@@ -424,6 +561,10 @@
       {
         "en": "Workflow",
         "id": "Alur Kerja"
+      },
+      {
+        "en": "Portfolio",
+        "id": "Portofolio"
       },
       {
         "en": "FAQ",

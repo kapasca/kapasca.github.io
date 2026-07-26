@@ -17,6 +17,9 @@
   var mobileMenuOverlay = document.querySelector(".mobile-menu-overlay");
   var mobileMenuToggle = document.querySelector("[data-mobile-menu-toggle]");
   var mobileMenuClose = document.querySelector("[data-mobile-menu-close]");
+  var portfolioOverlay = document.querySelector(".portfolio-overlay");
+  var portfolioOpenButtons = document.querySelectorAll("[data-portfolio-open]");
+  var portfolioCloseButton = document.querySelector("[data-portfolio-close]");
   var activeIndex = 0;
   var currentLanguage = "en";
   var cmdkItemsData = [];
@@ -56,6 +59,7 @@
       { label: "About Us", tag: "Nav", href: "#about" },
       { label: "Services", tag: "Nav", href: "#services" },
       { label: "Workflow", tag: "Nav", href: "#process" },
+      { label: "Portfolio", tag: "Nav", href: "#portfolio" },
       { label: "FAQ", tag: "Nav", href: "#faq" },
       { label: "Start New Project", tag: "Action", href: "#contact" }
     ],
@@ -64,6 +68,7 @@
       { label: "Tentang Kami", tag: "Nav", href: "#about" },
       { label: "Layanan", tag: "Nav", href: "#services" },
       { label: "Alur Kerja", tag: "Nav", href: "#process" },
+      { label: "Portofolio", tag: "Nav", href: "#portfolio" },
       { label: "FAQ", tag: "Nav", href: "#faq" },
       { label: "Mulai Proyek Baru", tag: "Aksi", href: "#contact" }
     ]
@@ -562,6 +567,36 @@
     });
   }
 
+  function openPortfolioDialog() {
+    if (!portfolioOverlay) return;
+    portfolioOverlay.classList.add("is-open");
+    portfolioOverlay.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closePortfolioDialog() {
+    if (!portfolioOverlay) return;
+    portfolioOverlay.classList.remove("is-open");
+    portfolioOverlay.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+  }
+
+  function initPortfolioDialog() {
+    portfolioOpenButtons.forEach(function (btn) {
+      btn.addEventListener("click", openPortfolioDialog);
+    });
+
+    if (portfolioCloseButton) {
+      portfolioCloseButton.addEventListener("click", closePortfolioDialog);
+    }
+
+    if (portfolioOverlay) {
+      portfolioOverlay.addEventListener("click", function (e) {
+        if (e.target === portfolioOverlay) closePortfolioDialog();
+      });
+    }
+  }
+
   function openCmdk() {
     if (!cmdkOverlay) return;
     cmdkOverlay.classList.add("is-open");
@@ -702,6 +737,7 @@
         e.preventDefault();
         openCmdk();
       } else if (e.key === "Escape") {
+        closePortfolioDialog();
         closeMobileMenu();
         if (cmdkOverlay && cmdkOverlay.classList.contains("is-open")) closeCmdk();
         closeEgg();
@@ -732,6 +768,7 @@
     initReveal();
     initCmdk();
     initAnchorNavigation();
+    initPortfolioDialog();
     initMobileMenu();
     initKeyboardShortcuts();
     initEasterEgg();

@@ -276,6 +276,26 @@
         </div>
       </section>
 
+      <section id="portfolio">
+        <div class="container">
+          <div class="final-cta-field blueprint-field" aria-hidden="true"></div>
+          <div class="section-head reveal">
+            <span class="eyebrow accent-green" data-i18n="portfolio.eyebrow" data-i18n-preserve="prepend:.dot"><span class="dot"></span>{{portfolio.eyebrow}}</span>
+            <h2 data-i18n="portfolio.title">{{portfolio.title}}</h2>
+            <p data-i18n="portfolio.lead">{{portfolio.lead}}</p>
+          </div>
+          <div class="portfolio-grid reveal-group">
+            <button class="portfolio-card reveal accent-blue" type="button" data-portfolio-open="sakumese" data-i18n-attr="aria-label:portfolio.items.0.openAria">
+              <img class="portfolio-card-media" src="assets/img/portfolio_sakumesebot.png" data-i18n-attr="alt:portfolio.items.0.imageAlt" alt="SAKUMESE app screenshot" loading="lazy" decoding="async" />
+              <div class="portfolio-card-content">
+                <h3 data-i18n="portfolio.items.0.name">{{portfolio.items.0.name}}</h3>
+                <p data-i18n="portfolio.items.0.body">{{portfolio.items.0.body}}</p>
+              </div>
+            </button>
+          </div>
+        </div>
+      </section>
+
       <section id="faq">
         <div class="container">
           <div class="final-cta-field blueprint-field" aria-hidden="true"></div>
@@ -343,7 +363,8 @@
               <li><a href="#about" data-i18n="footer.navItems.0">{{footer.navItems.0}}</a></li>
               <li><a href="#services" data-i18n="footer.navItems.1">{{footer.navItems.1}}</a></li>
               <li><a href="#process" data-i18n="footer.navItems.2">{{footer.navItems.2}}</a></li>
-              <li><a href="#faq" data-i18n="footer.navItems.3">{{footer.navItems.3}}</a></li>
+              <li><a href="#portfolio" data-i18n="footer.navItems.3">{{footer.navItems.3}}</a></li>
+              <li><a href="#faq" data-i18n="footer.navItems.4">{{footer.navItems.4}}</a></li>
             </ul>
           </nav>
           <div class="footer-col">
@@ -385,6 +406,48 @@
         </div>
       </div>
     </footer>
+
+    <div class="portfolio-overlay" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Product details" data-i18n-attr="aria-label:portfolio.dialogAria">
+      <button class="portfolio-close" type="button" data-portfolio-close data-i18n="portfolio.close">{{portfolio.close}}</button>
+      <div class="portfolio-dialog" role="document">
+        <div class="portfolio-dialog-head">
+          <img class="portfolio-dialog-media" src="assets/img/portfolio_sakumesebot.png" data-i18n-attr="alt:portfolio.items.0.imageAlt" alt="SAKUMESE app screenshot" loading="lazy" decoding="async" />
+          <div class="portfolio-dialog-title-block">
+            <img class="portfolio-dialog-logo" src="assets/img/portfolio_sakumesebot-icon.png" data-i18n-attr="alt:portfolio.items.0.iconAlt" alt="SAKUMESE logo" loading="lazy" decoding="async" />
+            <div>
+              <h2 data-i18n="portfolio.details.sakumese.title">{{portfolio.details.sakumese.title}}</h2>
+              <h5 data-i18n="portfolio.details.sakumese.subtitle">{{portfolio.details.sakumese.subtitle}}</h5>
+            </div>
+          </div>
+        </div>
+        <p class="portfolio-intro" data-i18n="portfolio.details.sakumese.intro1">{{portfolio.details.sakumese.intro1}}</p>
+        <p class="portfolio-intro" data-i18n="portfolio.details.sakumese.intro2">{{portfolio.details.sakumese.intro2}}</p>
+
+        <h4 class="portfolio-subtitle portfolio-features-title" data-i18n="portfolio.details.sakumese.featuresTitle">{{portfolio.details.sakumese.featuresTitle}}</h4>
+        <ul class="portfolio-detail-list portfolio-features-list">
+          <li data-i18n="portfolio.details.sakumese.features.0">{{portfolio.details.sakumese.features.0}}</li>
+          <li data-i18n="portfolio.details.sakumese.features.1">{{portfolio.details.sakumese.features.1}}</li>
+          <li data-i18n="portfolio.details.sakumese.features.2">{{portfolio.details.sakumese.features.2}}</li>
+          <li data-i18n="portfolio.details.sakumese.features.3">{{portfolio.details.sakumese.features.3}}</li>
+          <li data-i18n="portfolio.details.sakumese.features.4">{{portfolio.details.sakumese.features.4}}</li>
+          <li data-i18n="portfolio.details.sakumese.features.5">{{portfolio.details.sakumese.features.5}}</li>
+          <li data-i18n="portfolio.details.sakumese.features.6">{{portfolio.details.sakumese.features.6}}</li>
+        </ul>
+
+        <h4 class="portfolio-subtitle portfolio-stack-title" data-i18n="portfolio.details.sakumese.stackTitle">{{portfolio.details.sakumese.stackTitle}}</h4>
+        <ul class="portfolio-detail-list portfolio-stack-chips">
+          <li data-i18n="portfolio.details.sakumese.stack.0">{{portfolio.details.sakumese.stack.0}}</li>
+          <li data-i18n="portfolio.details.sakumese.stack.1">{{portfolio.details.sakumese.stack.1}}</li>
+          <li data-i18n="portfolio.details.sakumese.stack.2">{{portfolio.details.sakumese.stack.2}}</li>
+          <li data-i18n="portfolio.details.sakumese.stack.3">{{portfolio.details.sakumese.stack.3}}</li>
+        </ul>
+
+        <div class="portfolio-status-row portfolio-status-block">
+          <h4 data-i18n="portfolio.details.sakumese.statusTitle">{{portfolio.details.sakumese.statusTitle}}</h4>
+          <p class="portfolio-status" data-i18n="portfolio.details.sakumese.statusValue">{{portfolio.details.sakumese.statusValue}}</p>
+        </div>
+      </div>
+    </div>
 
     <div class="egg-overlay" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Easter egg PAGODEV" data-i18n-attr="aria-label:egg.aria">
       <div class="egg-content">
