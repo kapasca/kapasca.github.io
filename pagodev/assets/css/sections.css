@@ -473,6 +473,12 @@
   background: rgba(108, 195, 126, 0.18);
 }
 
+.portfolio-bot-handle {
+  font-family: var(--font-mono);
+  color: var(--c-blue);
+  font-weight: 700;
+}
+
 @media (max-width: 760px) {
   .portfolio-dialog h2 {
     margin: 5px 0 0 0;

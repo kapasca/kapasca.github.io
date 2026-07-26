@@ -394,6 +394,10 @@
         "statusValue": {
           "en": "Publicly Available",
           "id": "Tersedia untuk Publik"
+        },
+        "intro3": {
+          "en": "Want to try it? Search for <span class=\"portfolio-bot-handle\">@sakumesebot</span> in Telegram, then follow the guidance there.",
+          "id": "Mau coba pakai? Cari <span class=\"portfolio-bot-handle\">@sakumesebot</span> pada pencarian Telegram, lalu ikuti panduan yang tersedia di sana."
         }
       }
     }
